@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/sakuragamescreen_screen/SakuraGameScreenPresenter.hpp:28:13:SakuraGameScreenPresenter::~SakuraGameScreenPresenter()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenPresenter.cpp:10:6:virtual void SakuraGameScreenPresenter::activate()	1
+../../TouchGFX/gui/include/gui/sakuragamescreen_screen/SakuraGameScreenPresenter.hpp:28:13:virtual SakuraGameScreenPresenter::~SakuraGameScreenPresenter()	1
+../../TouchGFX/gui/include/gui/sakuragamescreen_screen/SakuraGameScreenPresenter.hpp:28:13:virtual void* SakuraGameScreenPresenter::_ZThn4_N25SakuraGameScreenPresenterD1Ev()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenPresenter.cpp:4:1:SakuraGameScreenPresenter::SakuraGameScreenPresenter(SakuraGameScreenView&)	1

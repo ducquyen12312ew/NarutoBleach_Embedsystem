@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/character_screen/CharacterPresenter.hpp:28:13:CharacterPresenter::~CharacterPresenter()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterPresenter.cpp:10:6:virtual void CharacterPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/character_screen/CharacterPresenter.hpp:28:13:virtual CharacterPresenter::~CharacterPresenter()	8	static
+../../TouchGFX/gui/include/gui/character_screen/CharacterPresenter.hpp:28:13:virtual void* CharacterPresenter::_ZThn4_N18CharacterPresenterD1Ev()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterPresenter.cpp:4:1:CharacterPresenter::CharacterPresenter(CharacterView&)	0	static

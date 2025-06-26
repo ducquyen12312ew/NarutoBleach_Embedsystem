@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/rewardscreen_screen/RewardScreenPresenter.hpp:28:13:RewardScreenPresenter::~RewardScreenPresenter()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/rewardscreen_screen/RewardScreenPresenter.cpp:10:6:virtual void RewardScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/rewardscreen_screen/RewardScreenPresenter.hpp:28:13:virtual RewardScreenPresenter::~RewardScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/rewardscreen_screen/RewardScreenPresenter.hpp:28:13:virtual void* RewardScreenPresenter::_ZThn4_N21RewardScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/rewardscreen_screen/RewardScreenPresenter.cpp:4:1:RewardScreenPresenter::RewardScreenPresenter(RewardScreenView&)	0	static

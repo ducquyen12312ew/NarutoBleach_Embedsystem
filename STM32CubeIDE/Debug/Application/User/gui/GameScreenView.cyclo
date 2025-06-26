@@ -1,0 +1,56 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:514:6:virtual void GameScreenView::tearDownScreen()	1
+../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:11:13:GameScreenView::~GameScreenView()	1
+../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:11:13:virtual GameScreenView::~GameScreenView()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1199:5:int GameScreenView::calculateDamage(int, bool, bool, bool)	6
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:533:6:void GameScreenView::toggleLED()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:180:10:bool touchgfx::Rect::intersect(int16_t, int16_t) const	4
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:6:1:GameScreenView::GameScreenView()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:519:6:void GameScreenView::initGPIO()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:533:6:void GameScreenView::toggleLED()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:854:6:void GameScreenView::debugGameState()	5
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1182:5:int GameScreenView::generateRandomNumber(int, int)	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1199:5:int GameScreenView::calculateDamage(int, bool, bool, bool)	2
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1819:6:void GameScreenView::startResetTimer()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:2044:5:int GameScreenView::calculateSpecialDamage(int, bool, bool)	2
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:358:6:void GameScreenView::hideDamageText()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:100:6:void GameScreenView::showDamageText(int, int)	47
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:420:6:void GameScreenView::updateDamageDisplay()	47
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:538:6:void GameScreenView::hideActionButtons()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:555:6:void GameScreenView::showActionButtons()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:572:6:void GameScreenView::toggleActionMenu()	2
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1141:6:void GameScreenView::hideAllPlayerPowerUps()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1057:6:void GameScreenView::updatePlayerPowerUpDisplay()	6
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1154:6:void GameScreenView::hideAllAIPowerUps()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1105:6:void GameScreenView::updateAIPowerUpDisplay()	6
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1167:6:void GameScreenView::clearPowerUpAfterUse(bool)	2
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1773:6:void GameScreenView::resetNarutoState()	3
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1796:6:void GameScreenView::resetBleachState()	3
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1986:6:void GameScreenView::hideAllPlayerHPWidgets()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:2015:6:void GameScreenView::hideAllAIHPWidgets()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:2064:6:void GameScreenView::updatePlayerChakraDisplay()	6
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:2124:6:void GameScreenView::gainChakra(int)	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:2135:6:void GameScreenView::useChakra(int)	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:2094:6:void GameScreenView::updateAIChakraDisplay()	6
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:2155:6:void GameScreenView::endGame(bool)	2
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1827:6:void GameScreenView::updatePlayerHPDisplay()	18
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1280:6:void GameScreenView::playerDefend()	3
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1631:6:void GameScreenView::aiAttack()	8
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1720:6:void GameScreenView::aiSpecial()	8
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1910:6:void GameScreenView::updateAIHPDisplay()	17
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:22:6:virtual void GameScreenView::setupScreen()	2
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1020:6:void GameScreenView::applyInstantPowerUp(bool, int)	5
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:792:6:void GameScreenView::giveRandomPowerUpsHighHealChakra()	7
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:926:6:void GameScreenView::giveRandomPowerUps()	5
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:890:6:0()	8
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:890:6:void GameScreenView::checkTurnComplete()	3
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:744:6:virtual void GameScreenView::handleTickEvent()	7
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:975:6:void GameScreenView::giveRandomPowerUpsAlternative()	3
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1231:6:void GameScreenView::playerAttack()	7
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1321:6:void GameScreenView::playerSpecial()	10
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1680:6:void GameScreenView::aiDefend()	4
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:1381:6:void GameScreenView::performAIAction()	48
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:582:6:virtual void GameScreenView::handleClickEvent(const touchgfx::ClickEvent&)	44
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:739:6:virtual void GameScreenView::handleDragEvent(const touchgfx::DragEvent&)	1

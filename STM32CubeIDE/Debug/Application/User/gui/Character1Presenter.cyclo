@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/character1_screen/Character1Presenter.hpp:28:13:Character1Presenter::~Character1Presenter()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character1_screen/Character1Presenter.cpp:10:6:virtual void Character1Presenter::activate()	1
+../../TouchGFX/gui/include/gui/character1_screen/Character1Presenter.hpp:28:13:virtual Character1Presenter::~Character1Presenter()	1
+../../TouchGFX/gui/include/gui/character1_screen/Character1Presenter.hpp:28:13:virtual void* Character1Presenter::_ZThn4_N19Character1PresenterD1Ev()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character1_screen/Character1Presenter.cpp:4:1:Character1Presenter::Character1Presenter(Character1View&)	1

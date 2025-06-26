@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/sponge_screen/SpongePresenter.hpp:28:13:SpongePresenter::~SpongePresenter()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongePresenter.cpp:10:6:virtual void SpongePresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/sponge_screen/SpongePresenter.hpp:28:13:virtual SpongePresenter::~SpongePresenter()	8	static
+../../TouchGFX/gui/include/gui/sponge_screen/SpongePresenter.hpp:28:13:virtual void* SpongePresenter::_ZThn4_N15SpongePresenterD1Ev()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongePresenter.cpp:4:1:SpongePresenter::SpongePresenter(SpongeView&)	0	static

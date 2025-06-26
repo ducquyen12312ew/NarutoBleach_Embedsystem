@@ -1,0 +1,17 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:24:6:virtual void CharacterView::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/character_screen/CharacterView.hpp:12:13:CharacterView::~CharacterView()	8	static
+../../TouchGFX/gui/include/gui/character_screen/CharacterView.hpp:12:13:virtual CharacterView::~CharacterView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:7:1:CharacterView::CharacterView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:131:6:bool CharacterView::isCharacterUnlocked(Character)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:201:6:void CharacterView::hideAllCharacters()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:210:6:void CharacterView::testLED()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:12:6:virtual void CharacterView::setupScreen()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:59:6:void CharacterView::leftArrowClicked()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:95:6:void CharacterView::rightArrowClicked()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:146:6:void CharacterView::updateCharacterDisplay()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:164:6:void CharacterView::showCharacter(Character)	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:215:6:void CharacterView::testUnlock()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/character_screen/CharacterView.cpp:29:6:virtual void CharacterView::handleClickEvent(const touchgfx::ClickEvent&)	16	static

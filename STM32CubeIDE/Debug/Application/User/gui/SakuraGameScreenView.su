@@ -1,0 +1,55 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:229:6:virtual void SakuraGameScreenView::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/sakuragamescreen_screen/SakuraGameScreenView.hpp:11:13:SakuraGameScreenView::~SakuraGameScreenView()	8	static
+../../TouchGFX/gui/include/gui/sakuragamescreen_screen/SakuraGameScreenView.hpp:11:13:virtual SakuraGameScreenView::~SakuraGameScreenView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:248:6:void SakuraGameScreenView::toggleLED()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:180:10:bool touchgfx::Rect::intersect(int16_t, int16_t) const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	24	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:7:1:SakuraGameScreenView::SakuraGameScreenView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:234:6:void SakuraGameScreenView::initGPIO()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:248:6:void SakuraGameScreenView::toggleLED()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:673:6:void SakuraGameScreenView::updateAIPowerUpDisplay()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:718:5:int SakuraGameScreenView::generateRandomNumber(int, int)	12	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:735:5:int SakuraGameScreenView::calculateDamage(int, bool, bool, bool)	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1415:6:void SakuraGameScreenView::startResetTimer()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1535:5:int SakuraGameScreenView::calculateSpecialDamage(int, bool, bool)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:104:6:void SakuraGameScreenView::hideAllFireEffects()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:115:6:void SakuraGameScreenView::startAttackFireAnimation()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:130:6:void SakuraGameScreenView::startSpecialFireAnimation()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:149:6:void SakuraGameScreenView::updateFireAnimation()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:253:6:void SakuraGameScreenView::hideActionButtons()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:270:6:void SakuraGameScreenView::showActionButtons()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:287:6:void SakuraGameScreenView::toggleActionMenu()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:485:6:void SakuraGameScreenView::hideAllBossHPWidgets()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:520:6:void SakuraGameScreenView::forceBossHPVisible()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:677:6:void SakuraGameScreenView::hideAllPlayerPowerUps()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:625:6:void SakuraGameScreenView::updatePlayerPowerUpDisplay()	24	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:703:6:void SakuraGameScreenView::clearPowerUpAfterUse(bool)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:690:6:void SakuraGameScreenView::hideAllAIPowerUps()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1369:6:void SakuraGameScreenView::resetNarutoState()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1392:6:void SakuraGameScreenView::resetBleachState()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1506:6:void SakuraGameScreenView::hideAllPlayerHPWidgets()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1558:6:void SakuraGameScreenView::updatePlayerChakraDisplay()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1618:6:void SakuraGameScreenView::gainChakra(int)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1629:6:void SakuraGameScreenView::useChakra(int)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1588:6:void SakuraGameScreenView::updateAIChakraDisplay()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1649:6:void SakuraGameScreenView::endGame(bool)	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1423:6:void SakuraGameScreenView::updatePlayerHPDisplay()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:599:6:void SakuraGameScreenView::applyInstantPowerUp(bool, int)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:570:6:void SakuraGameScreenView::givePlayerPowerUp()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:539:6:0()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:539:6:void SakuraGameScreenView::checkTurnComplete()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:804:6:void SakuraGameScreenView::playerDefend()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:840:6:void SakuraGameScreenView::playerSpecial()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1215:6:void SakuraGameScreenView::aiAttack()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1321:6:void SakuraGameScreenView::aiSpecial()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1761:6:void SakuraGameScreenView::activateEasterEgg()	24	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1839:6:void SakuraGameScreenView::updateBossHPDisplay()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:30:6:virtual void SakuraGameScreenView::setupScreen()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:409:6:virtual void SakuraGameScreenView::handleTickEvent()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:763:6:void SakuraGameScreenView::playerAttack()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:1273:6:void SakuraGameScreenView::aiDefend()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:901:6:void SakuraGameScreenView::performAIAction()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:297:6:virtual void SakuraGameScreenView::handleClickEvent(const touchgfx::ClickEvent&)	56	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuragamescreen_screen/SakuraGameScreenView.cpp:404:6:virtual void SakuraGameScreenView::handleDragEvent(const touchgfx::DragEvent&)	0	static

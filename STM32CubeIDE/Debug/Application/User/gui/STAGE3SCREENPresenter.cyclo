@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/stage3screen_screen/STAGE3SCREENPresenter.hpp:28:13:STAGE3SCREENPresenter::~STAGE3SCREENPresenter()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/stage3screen_screen/STAGE3SCREENPresenter.cpp:10:6:virtual void STAGE3SCREENPresenter::activate()	1
+../../TouchGFX/gui/include/gui/stage3screen_screen/STAGE3SCREENPresenter.hpp:28:13:virtual STAGE3SCREENPresenter::~STAGE3SCREENPresenter()	1
+../../TouchGFX/gui/include/gui/stage3screen_screen/STAGE3SCREENPresenter.hpp:28:13:virtual void* STAGE3SCREENPresenter::_ZThn4_N21STAGE3SCREENPresenterD1Ev()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/stage3screen_screen/STAGE3SCREENPresenter.cpp:4:1:STAGE3SCREENPresenter::STAGE3SCREENPresenter(STAGE3SCREENView&)	1

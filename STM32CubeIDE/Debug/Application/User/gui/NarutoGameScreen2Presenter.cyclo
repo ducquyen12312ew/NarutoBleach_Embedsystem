@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/narutogamescreen2_screen/NarutoGameScreen2Presenter.hpp:28:13:NarutoGameScreen2Presenter::~NarutoGameScreen2Presenter()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2Presenter.cpp:10:6:virtual void NarutoGameScreen2Presenter::activate()	1
+../../TouchGFX/gui/include/gui/narutogamescreen2_screen/NarutoGameScreen2Presenter.hpp:28:13:virtual NarutoGameScreen2Presenter::~NarutoGameScreen2Presenter()	1
+../../TouchGFX/gui/include/gui/narutogamescreen2_screen/NarutoGameScreen2Presenter.hpp:28:13:virtual void* NarutoGameScreen2Presenter::_ZThn4_N26NarutoGameScreen2PresenterD1Ev()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2Presenter.cpp:4:1:NarutoGameScreen2Presenter::NarutoGameScreen2Presenter(NarutoGameScreen2View&)	1

@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/sakuramainscreen_screen/SakuraMainScreenPresenter.hpp:28:13:SakuraMainScreenPresenter::~SakuraMainScreenPresenter()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuramainscreen_screen/SakuraMainScreenPresenter.cpp:10:6:virtual void SakuraMainScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/sakuramainscreen_screen/SakuraMainScreenPresenter.hpp:28:13:virtual SakuraMainScreenPresenter::~SakuraMainScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/sakuramainscreen_screen/SakuraMainScreenPresenter.hpp:28:13:virtual void* SakuraMainScreenPresenter::_ZThn4_N25SakuraMainScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakuramainscreen_screen/SakuraMainScreenPresenter.cpp:4:1:SakuraMainScreenPresenter::SakuraMainScreenPresenter(SakuraMainScreenView&)	0	static

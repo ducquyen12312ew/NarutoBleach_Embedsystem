@@ -1,0 +1,51 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp:72:18:virtual void touchgfx::Application::changeToStartScreen()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp:91:18:virtual void touchgfx::Application::appSwitchScreen(uint8_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp:104:18:virtual void touchgfx::Application::requestRedraw(touchgfx::Rect&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:72:18:virtual void touchgfx::Transition::tearDown()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:80:18:virtual void touchgfx::Transition::init()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:100:18:virtual void touchgfx::Transition::setScreenContainer(touchgfx::Container&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:43:7:touchgfx::MVPApplication::~MVPApplication()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:touchgfx::Callback<FrontendApplicationBase>::~Callback()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:16:13:FrontendApplicationBase::~FrontendApplicationBase()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:18:18:virtual void FrontendApplicationBase::changeToStartScreen()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/NoTransition.hpp:35:18:virtual void touchgfx::NoTransition::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/NoTransition.hpp:31:7:touchgfx::NoTransition::~NoTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:449:18:void touchgfx::Callback<dest_type, void, void, void>::execute() [with dest_type = FrontendApplicationBase]	4	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:459:18:bool touchgfx::Callback<dest_type, void, void, void>::isValid() const [with dest_type = FrontendApplicationBase]	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/NoTransition.hpp:31:7:virtual touchgfx::NoTransition::~NoTransition()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:virtual touchgfx::Callback<FrontendApplicationBase>::~Callback()	8	static
+../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:43:7:virtual touchgfx::MVPApplication::~MVPApplication()	8	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:16:13:virtual FrontendApplicationBase::~FrontendApplicationBase()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:89:18:virtual void touchgfx::Transition::invalidate()	8	static
+../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:59:18:virtual void touchgfx::MVPApplication::handlePendingScreenTransition()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:308:17:static touchgfx::LCD& touchgfx::HAL::lcd()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:43:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	24	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:62:6:void FrontendApplicationBase::gotoMainMenuScreenScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:75:6:void FrontendApplicationBase::gotoGameScreenScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:88:6:void FrontendApplicationBase::gotoBackUpScreenScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:101:6:void FrontendApplicationBase::gotoCharacterScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:114:6:void FrontendApplicationBase::gotoCharacter_2ScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:127:6:void FrontendApplicationBase::gotoRewardScreenScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:140:6:void FrontendApplicationBase::gotoSakuraMainScreenScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:153:6:void FrontendApplicationBase::gotoSakuraGameScreenScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:166:6:void FrontendApplicationBase::gotoNarutoGameScreen2ScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:179:6:void FrontendApplicationBase::gotoCharacter1ScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:192:6:void FrontendApplicationBase::gotoSakuraFinalScreenScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:205:6:void FrontendApplicationBase::gotoRewardFinalScreenScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:218:6:void FrontendApplicationBase::gotoCharacter_FinalScreenNoTransition()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:231:6:void FrontendApplicationBase::gotoSpongeScreenNoTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = touchgfx::NoTransition]	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:237:6:void FrontendApplicationBase::gotoSpongeScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:224:6:void FrontendApplicationBase::gotoCharacter_FinalScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:211:6:void FrontendApplicationBase::gotoRewardFinalScreenScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:198:6:void FrontendApplicationBase::gotoSakuraFinalScreenScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:185:6:void FrontendApplicationBase::gotoCharacter1ScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:172:6:void FrontendApplicationBase::gotoNarutoGameScreen2ScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:159:6:void FrontendApplicationBase::gotoSakuraGameScreenScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:146:6:void FrontendApplicationBase::gotoSakuraMainScreenScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:133:6:void FrontendApplicationBase::gotoRewardScreenScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:120:6:void FrontendApplicationBase::gotoCharacter_2ScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:107:6:void FrontendApplicationBase::gotoCharacterScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:94:6:void FrontendApplicationBase::gotoBackUpScreenScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:81:6:void FrontendApplicationBase::gotoGameScreenScreenNoTransitionImpl()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:68:6:void FrontendApplicationBase::gotoMainMenuScreenScreenNoTransitionImpl()	40	static

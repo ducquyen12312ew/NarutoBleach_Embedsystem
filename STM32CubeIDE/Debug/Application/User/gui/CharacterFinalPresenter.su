@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/characterfinal_screen/CharacterFinalPresenter.hpp:28:13:CharacterFinalPresenter::~CharacterFinalPresenter()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/characterfinal_screen/CharacterFinalPresenter.cpp:10:6:virtual void CharacterFinalPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/characterfinal_screen/CharacterFinalPresenter.hpp:28:13:virtual CharacterFinalPresenter::~CharacterFinalPresenter()	8	static
+../../TouchGFX/gui/include/gui/characterfinal_screen/CharacterFinalPresenter.hpp:28:13:virtual void* CharacterFinalPresenter::_ZThn4_N23CharacterFinalPresenterD1Ev()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/characterfinal_screen/CharacterFinalPresenter.cpp:4:1:CharacterFinalPresenter::CharacterFinalPresenter(CharacterFinalView&)	0	static

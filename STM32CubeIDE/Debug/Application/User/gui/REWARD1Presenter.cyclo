@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/reward1_screen/REWARD1Presenter.hpp:28:13:REWARD1Presenter::~REWARD1Presenter()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/reward1_screen/REWARD1Presenter.cpp:10:6:virtual void REWARD1Presenter::activate()	1
+../../TouchGFX/gui/include/gui/reward1_screen/REWARD1Presenter.hpp:28:13:virtual REWARD1Presenter::~REWARD1Presenter()	1
+../../TouchGFX/gui/include/gui/reward1_screen/REWARD1Presenter.hpp:28:13:virtual void* REWARD1Presenter::_ZThn4_N16REWARD1PresenterD1Ev()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/reward1_screen/REWARD1Presenter.cpp:4:1:REWARD1Presenter::REWARD1Presenter(REWARD1View&)	1

@@ -1,0 +1,20 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:31:6:virtual void SpongeView::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/sponge_screen/SpongeView.hpp:11:13:SpongeView::~SpongeView()	8	static
+../../TouchGFX/gui/include/gui/sponge_screen/SpongeView.hpp:11:13:virtual SpongeView::~SpongeView()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:180:10:bool touchgfx::Rect::intersect(int16_t, int16_t) const	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:5:1:SpongeView::SpongeView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:36:6:void SpongeView::initGPIO()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:50:6:void SpongeView::toggleLED()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:224:6:void SpongeView::startResetTimer()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:55:6:void SpongeView::hideActionButtons()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:72:6:void SpongeView::showActionButtons()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:89:6:void SpongeView::toggleActionMenu()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:205:6:void SpongeView::resetSpongeState()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:12:6:virtual void SpongeView::setupScreen()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:134:6:virtual void SpongeView::handleTickEvent()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:149:6:void SpongeView::performAttack()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:166:6:void SpongeView::performDefend()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:183:6:void SpongeView::performSpecial()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponge_screen/SpongeView.cpp:99:6:virtual void SpongeView::handleClickEvent(const touchgfx::ClickEvent&)	24	static

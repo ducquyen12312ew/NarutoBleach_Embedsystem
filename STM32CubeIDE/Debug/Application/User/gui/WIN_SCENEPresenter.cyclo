@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/win_scene_screen/WIN_SCENEPresenter.hpp:28:13:WIN_SCENEPresenter::~WIN_SCENEPresenter()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/win_scene_screen/WIN_SCENEPresenter.cpp:10:6:virtual void WIN_SCENEPresenter::activate()	1
+../../TouchGFX/gui/include/gui/win_scene_screen/WIN_SCENEPresenter.hpp:28:13:virtual WIN_SCENEPresenter::~WIN_SCENEPresenter()	1
+../../TouchGFX/gui/include/gui/win_scene_screen/WIN_SCENEPresenter.hpp:28:13:virtual void* WIN_SCENEPresenter::_ZThn4_N18WIN_SCENEPresenterD1Ev()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/win_scene_screen/WIN_SCENEPresenter.cpp:4:1:WIN_SCENEPresenter::WIN_SCENEPresenter(WIN_SCENEView&)	1

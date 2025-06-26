@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/sakurafinalscreen_screen/SakuraFinalScreenPresenter.hpp:28:13:SakuraFinalScreenPresenter::~SakuraFinalScreenPresenter()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakurafinalscreen_screen/SakuraFinalScreenPresenter.cpp:10:6:virtual void SakuraFinalScreenPresenter::activate()	1
+../../TouchGFX/gui/include/gui/sakurafinalscreen_screen/SakuraFinalScreenPresenter.hpp:28:13:virtual SakuraFinalScreenPresenter::~SakuraFinalScreenPresenter()	1
+../../TouchGFX/gui/include/gui/sakurafinalscreen_screen/SakuraFinalScreenPresenter.hpp:28:13:virtual void* SakuraFinalScreenPresenter::_ZThn4_N26SakuraFinalScreenPresenterD1Ev()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sakurafinalscreen_screen/SakuraFinalScreenPresenter.cpp:4:1:SakuraFinalScreenPresenter::SakuraFinalScreenPresenter(SakuraFinalScreenView&)	1

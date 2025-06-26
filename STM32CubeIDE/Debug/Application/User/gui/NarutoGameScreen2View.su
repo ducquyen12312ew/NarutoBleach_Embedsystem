@@ -1,0 +1,55 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:228:6:virtual void NarutoGameScreen2View::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/narutogamescreen2_screen/NarutoGameScreen2View.hpp:11:13:NarutoGameScreen2View::~NarutoGameScreen2View()	8	static
+../../TouchGFX/gui/include/gui/narutogamescreen2_screen/NarutoGameScreen2View.hpp:11:13:virtual NarutoGameScreen2View::~NarutoGameScreen2View()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:247:6:void NarutoGameScreen2View::toggleLED()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:180:10:bool touchgfx::Rect::intersect(int16_t, int16_t) const	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	24	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:6:1:NarutoGameScreen2View::NarutoGameScreen2View()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:233:6:void NarutoGameScreen2View::initGPIO()	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:247:6:void NarutoGameScreen2View::toggleLED()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:672:6:void NarutoGameScreen2View::updateAIPowerUpDisplay()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:717:5:int NarutoGameScreen2View::generateRandomNumber(int, int)	12	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:734:5:int NarutoGameScreen2View::calculateDamage(int, bool, bool, bool)	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1404:6:void NarutoGameScreen2View::startResetTimer()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1524:5:int NarutoGameScreen2View::calculateSpecialDamage(int, bool, bool)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:103:6:void NarutoGameScreen2View::hideAllFireEffects()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:114:6:void NarutoGameScreen2View::startAttackFireAnimation()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:129:6:void NarutoGameScreen2View::startSpecialFireAnimation()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:148:6:void NarutoGameScreen2View::updateFireAnimation()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:252:6:void NarutoGameScreen2View::hideActionButtons()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:269:6:void NarutoGameScreen2View::showActionButtons()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:286:6:void NarutoGameScreen2View::toggleActionMenu()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:484:6:void NarutoGameScreen2View::hideAllBossHPWidgets()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:519:6:void NarutoGameScreen2View::forceBossHPVisible()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:676:6:void NarutoGameScreen2View::hideAllPlayerPowerUps()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:624:6:void NarutoGameScreen2View::updatePlayerPowerUpDisplay()	24	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:702:6:void NarutoGameScreen2View::clearPowerUpAfterUse(bool)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:689:6:void NarutoGameScreen2View::hideAllAIPowerUps()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1358:6:void NarutoGameScreen2View::resetNarutoState()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1381:6:void NarutoGameScreen2View::resetBleachState()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1495:6:void NarutoGameScreen2View::hideAllPlayerHPWidgets()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1547:6:void NarutoGameScreen2View::updatePlayerChakraDisplay()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1607:6:void NarutoGameScreen2View::gainChakra(int)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1618:6:void NarutoGameScreen2View::useChakra(int)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1577:6:void NarutoGameScreen2View::updateAIChakraDisplay()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1638:6:void NarutoGameScreen2View::endGame(bool)	40	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1412:6:void NarutoGameScreen2View::updatePlayerHPDisplay()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:598:6:void NarutoGameScreen2View::applyInstantPowerUp(bool, int)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:569:6:void NarutoGameScreen2View::givePlayerPowerUp()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:538:6:0()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:538:6:void NarutoGameScreen2View::checkTurnComplete()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:803:6:void NarutoGameScreen2View::playerDefend()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1204:6:void NarutoGameScreen2View::aiAttack()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1310:6:void NarutoGameScreen2View::aiSpecial()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1750:6:void NarutoGameScreen2View::activateEasterEgg()	24	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1828:6:void NarutoGameScreen2View::updateBossHPDisplay()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:29:6:virtual void NarutoGameScreen2View::setupScreen()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:408:6:virtual void NarutoGameScreen2View::handleTickEvent()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:762:6:void NarutoGameScreen2View::playerAttack()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:839:6:void NarutoGameScreen2View::playerSpecial()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:1262:6:void NarutoGameScreen2View::aiDefend()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:890:6:void NarutoGameScreen2View::performAIAction()	16	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:296:6:virtual void NarutoGameScreen2View::handleClickEvent(const touchgfx::ClickEvent&)	56	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/narutogamescreen2_screen/NarutoGameScreen2View.cpp:403:6:virtual void NarutoGameScreen2View::handleDragEvent(const touchgfx::DragEvent&)	0	static

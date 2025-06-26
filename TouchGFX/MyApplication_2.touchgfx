@@ -1,0 +1,4008 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "MainMenuScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\main.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "title",
+            "X": 41,
+            "Y": 14,
+            "Width": 158,
+            "Height": 112,
+            "Filename": "title1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "select_img",
+            "X": 56,
+            "Y": 145,
+            "Width": 129,
+            "Height": 64,
+            "Filename": "selectcha.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "play_img",
+            "X": 57,
+            "Y": 219,
+            "Width": 124,
+            "Height": 65,
+            "Filename": "playnow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "reward",
+            "X": 184,
+            "Y": 280,
+            "Width": 55,
+            "Height": 36,
+            "Filename": "trophy.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "PLAY",
+            "X": 69,
+            "Y": 224,
+            "Width": 102,
+            "Height": 54,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 54,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "SELECT",
+            "X": 68,
+            "Y": 150,
+            "Width": 102,
+            "Height": 54,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 54,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Select",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "SELECT"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Character"
+            }
+          },
+          {
+            "InteractionName": "GameScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "PLAY"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "GameScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "GameScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "san_Dau",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\stage2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_100_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Filename": "bar1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_10_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar11.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_0_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar12.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_20_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar10.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_30_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar9.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_40_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar8.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_50_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar7.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_60_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar6.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_70_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_80_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_90_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_100_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Filename": "bar2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_90_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth9.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_80_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth8.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_70_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth7.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_60_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth6.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_50_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_40_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_30_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_20_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_10_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_0_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth0.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach",
+            "X": 167,
+            "Y": 107,
+            "Width": 64,
+            "Height": 85,
+            "Filename": "bleach.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_win",
+            "X": 161,
+            "Y": 107,
+            "Width": 76,
+            "Height": 85,
+            "Visible": false,
+            "Filename": "bleach_win.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_lose",
+            "X": 167,
+            "Y": 112,
+            "Width": 64,
+            "Height": 85,
+            "Visible": false,
+            "Filename": "bleach_die.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_spe",
+            "X": 99,
+            "Y": 62,
+            "Width": 117,
+            "Height": 130,
+            "Visible": false,
+            "Filename": "bleach_spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_def",
+            "X": 164,
+            "Y": 95,
+            "Width": 76,
+            "Height": 97,
+            "Visible": false,
+            "Filename": "bleach_def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_atk",
+            "X": 110,
+            "Y": 66,
+            "Width": 103,
+            "Height": 126,
+            "Visible": false,
+            "Filename": "bleach_atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto",
+            "X": 3,
+            "Y": 110,
+            "Width": 67,
+            "Height": 85,
+            "Filename": "naguto.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_win",
+            "X": 7,
+            "Y": 99,
+            "Width": 73,
+            "Height": 93,
+            "Visible": false,
+            "Filename": "naruto_win.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_lose",
+            "X": 7,
+            "Y": 117,
+            "Width": 67,
+            "Height": 85,
+            "Visible": false,
+            "Filename": "naruto_die.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_spe",
+            "X": 63,
+            "Y": 103,
+            "Width": 69,
+            "Height": 93,
+            "Visible": false,
+            "Filename": "naruto_spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_def",
+            "X": 5,
+            "Y": 100,
+            "Width": 69,
+            "Height": 92,
+            "Visible": false,
+            "Filename": "naruto_def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_atk",
+            "X": 57,
+            "Y": 100,
+            "Width": 69,
+            "Height": 92,
+            "Visible": false,
+            "Filename": "naruto_atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_attack",
+            "X": 64,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_def",
+            "X": 124,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_spe",
+            "X": 184,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_arrow2",
+            "X": 2,
+            "Y": 241,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "nut1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_arrow1",
+            "X": 2,
+            "Y": 241,
+            "Width": 46,
+            "Height": 46,
+            "Filename": "nut.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Box",
+            "Name": "chakra_box1",
+            "X": 14,
+            "Y": 43,
+            "Width": 86,
+            "Height": 5,
+            "Color": {
+              "Green": 102,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "chakra_box2",
+            "X": 135,
+            "Y": 43,
+            "Width": 86,
+            "Height": 5,
+            "Color": {
+              "Green": 102,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "gameover",
+            "X": 65,
+            "Y": 6,
+            "Width": 110,
+            "Height": 157,
+            "Visible": false,
+            "Filename": "gameover.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "win",
+            "X": 65,
+            "Y": 6,
+            "Width": 110,
+            "Height": 157,
+            "Visible": false,
+            "Filename": "youwin.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "x2dame_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "x2dame.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "x2dame_1",
+            "X": 7,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "x2dame.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "healthplus_1",
+            "X": 9,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "healthplus.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "chakragain_1",
+            "X": 9,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "chakragain.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sheild_1",
+            "X": 8,
+            "Y": 59,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "shield.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sheild_2",
+            "X": 199,
+            "Y": 58,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "shield.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "chakragain_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "chakragain.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "healthplus_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "healthplus.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_0",
+            "X": 64,
+            "Y": 113,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_Q361",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_0_1",
+            "X": 161,
+            "Y": 107,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_F1PO",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_1",
+            "X": 82,
+            "Y": 140,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_JUKL",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_1_1",
+            "X": 181,
+            "Y": 87,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_539L",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_3",
+            "X": 65,
+            "Y": 107,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_ABJK",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_3_1",
+            "X": 190,
+            "Y": 87,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_7L2W",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_4",
+            "X": 65,
+            "Y": 107,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_6D4S",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_4_1",
+            "X": 65,
+            "Y": 107,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_PNWU",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_5",
+            "X": 56,
+            "Y": 87,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_V88D",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_5_1",
+            "X": 149,
+            "Y": 150,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_NE6X",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_6",
+            "X": 74,
+            "Y": 150,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_WFFX",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_6_1",
+            "X": 190,
+            "Y": 87,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_1O0B",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_7",
+            "X": 33,
+            "Y": 87,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_56L9",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_7_1",
+            "X": 143,
+            "Y": 160,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_TA5C",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_8",
+            "X": 65,
+            "Y": 97,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_QFOP",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_8_1",
+            "X": 158,
+            "Y": 87,
+            "Width": 18,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_NC8X",
+            "TextRotation": "0",
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_10",
+            "X": 65,
+            "Y": 97,
+            "Width": 29,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_G9CR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_10_1",
+            "X": 164,
+            "Y": 87,
+            "Width": 29,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_G9X8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_12",
+            "X": 65,
+            "Y": 97,
+            "Width": 29,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_FVK3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_12_1",
+            "X": 170,
+            "Y": 87,
+            "Width": 29,
+            "Height": 20,
+            "Visible": false,
+            "TextId": "__SingleUse_VMY7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_15",
+            "X": 59,
+            "Y": 129,
+            "Width": 29,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_SJL7",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_15_1",
+            "X": 147,
+            "Y": 140,
+            "Width": 29,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_X1OE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_17",
+            "X": 13,
+            "Y": 77,
+            "Width": 29,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_BS6E",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_17_1",
+            "X": 199,
+            "Y": 87,
+            "Width": 29,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_0R2K",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_20",
+            "X": 57,
+            "Y": 96,
+            "Width": 29,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_MAJN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_20_1",
+            "X": 147,
+            "Y": 136,
+            "Width": 29,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_UGWJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 219,
+              "Green": 35,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_25",
+            "X": 69,
+            "Y": 160,
+            "Width": 29,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_92IF",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 234,
+              "Green": 245,
+              "Blue": 37
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_25_1",
+            "X": 137,
+            "Y": 129,
+            "Width": 29,
+            "Height": 40,
+            "Visible": false,
+            "TextId": "__SingleUse_8UBD",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 217,
+              "Green": 199,
+              "Blue": 35
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_40",
+            "X": 49,
+            "Y": 79,
+            "Width": 50,
+            "Height": 70,
+            "Visible": false,
+            "TextId": "__SingleUse_YRWP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 242
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_40_1",
+            "X": 169,
+            "Y": 72,
+            "Width": 50,
+            "Height": 70,
+            "Visible": false,
+            "TextId": "__SingleUse_7X4W",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 242
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_100",
+            "X": 14,
+            "Y": 125,
+            "Width": 69,
+            "Height": 70,
+            "Visible": false,
+            "TextId": "__SingleUse_5C1E",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 238
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "minus_100_1",
+            "X": 150,
+            "Y": 125,
+            "Width": 69,
+            "Height": 70,
+            "Visible": false,
+            "TextId": "__SingleUse_M86E",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 238
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "BackUpScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "BackUpScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\main.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "title",
+            "X": 41,
+            "Y": 14,
+            "Width": 158,
+            "Height": 112,
+            "Filename": "title1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "select_img",
+            "X": 64,
+            "Y": 146,
+            "Width": 110,
+            "Height": 73,
+            "Filename": "selectcha2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "play_img",
+            "X": 57,
+            "Y": 219,
+            "Width": 124,
+            "Height": 65,
+            "Filename": "playnow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "reward",
+            "X": 184,
+            "Y": 280,
+            "Width": 55,
+            "Height": 36,
+            "Filename": "trophy.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "REWARD",
+            "X": 184,
+            "Y": 276,
+            "Width": 55,
+            "Height": 44,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 55,
+                "Height": 44,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "PLAY",
+            "X": 69,
+            "Y": 224,
+            "Width": 102,
+            "Height": 54,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 54,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "SELECT",
+            "X": 68,
+            "Y": 160,
+            "Width": 102,
+            "Height": 54,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 54,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Select",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "SELECT"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Character_2"
+            }
+          },
+          {
+            "InteractionName": "PLAY",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "PLAY"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Character_2"
+            }
+          },
+          {
+            "InteractionName": "REWARD",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "REWARD"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RewardScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Character",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\pick.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto",
+            "X": 62,
+            "Y": 76,
+            "Width": 110,
+            "Height": 160,
+            "Filename": "naguto.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sponge",
+            "X": 57,
+            "Y": 65,
+            "Width": 132,
+            "Height": 185,
+            "Visible": false,
+            "Filename": "spongebob\\sponge.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sakura",
+            "X": 62,
+            "Y": 67,
+            "Width": 116,
+            "Height": 178,
+            "Visible": false,
+            "Filename": "sakura\\sakura.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sakura_lock",
+            "X": 62,
+            "Y": 67,
+            "Width": 116,
+            "Height": 178,
+            "Visible": false,
+            "Filename": "sakura\\sakura_lock.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sponge_lock",
+            "X": 62,
+            "Y": 67,
+            "Width": 116,
+            "Height": 178,
+            "Visible": false,
+            "Filename": "spongebob\\spong_lock.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "rightarrow",
+            "X": 197,
+            "Y": 135,
+            "Width": 42,
+            "Height": 54,
+            "Filename": "rightarrow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "leftarrow",
+            "Y": 135,
+            "Width": 42,
+            "Height": 54,
+            "Filename": "leftarrow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "MAINMENU_BUT",
+            "X": 70,
+            "Y": 76,
+            "Width": 102,
+            "Height": 160,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 160,
+                "LockToFlexButtonSize": true,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 138,
+                  "Green": 138,
+                  "Blue": 138
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "MAINMENU_BUT"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MainMenuScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Character_2",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\pick.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto",
+            "X": 62,
+            "Y": 76,
+            "Width": 110,
+            "Height": 160,
+            "Filename": "naguto.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sponge",
+            "X": 57,
+            "Y": 65,
+            "Width": 132,
+            "Height": 185,
+            "Visible": false,
+            "Filename": "spongebob\\sponge.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sakura",
+            "X": 62,
+            "Y": 67,
+            "Width": 116,
+            "Height": 178,
+            "Visible": false,
+            "Filename": "sakura\\sakura.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "rightarrow",
+            "X": 197,
+            "Y": 135,
+            "Width": 42,
+            "Height": 54,
+            "Filename": "rightarrow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "leftarrow",
+            "Y": 135,
+            "Width": 42,
+            "Height": 54,
+            "Filename": "leftarrow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "sakurabutton",
+            "X": 70,
+            "Y": 76,
+            "Width": 102,
+            "Height": 160,
+            "Visible": false,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 160,
+                "LockToFlexButtonSize": true,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 138,
+                  "Green": 138,
+                  "Blue": 138
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "narutobutton",
+            "X": 70,
+            "Y": 76,
+            "Width": 102,
+            "Height": 160,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 160,
+                "LockToFlexButtonSize": true,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 138,
+                  "Green": 138,
+                  "Blue": 138
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Sakura_Select",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "sakurabutton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "SakuraMainScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "narutobutton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "NarutoGameScreen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "RewardScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Y": -6,
+            "Width": 240,
+            "Height": 334,
+            "Filename": "stage\\reward.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "home",
+            "X": 187,
+            "Y": 278,
+            "Width": 59,
+            "Height": 42,
+            "Filename": "home.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "REWARD",
+            "X": 194,
+            "Y": 273,
+            "Width": 44,
+            "Height": 47,
+            "Alpha": 10,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 44,
+                "Height": 47,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sword",
+            "X": 25,
+            "Y": 30,
+            "Width": 61,
+            "Height": 78,
+            "Filename": "sword.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BackHome",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "REWARD"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "SakuraMainScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SakuraMainScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\main.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "title",
+            "X": 41,
+            "Y": 14,
+            "Width": 158,
+            "Height": 112,
+            "Filename": "title1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "select_img",
+            "X": 56,
+            "Y": 145,
+            "Width": 129,
+            "Height": 64,
+            "Filename": "selectcha.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "play_img",
+            "X": 57,
+            "Y": 219,
+            "Width": 124,
+            "Height": 65,
+            "Filename": "playnow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "reward",
+            "X": 184,
+            "Y": 280,
+            "Width": 55,
+            "Height": 36,
+            "Filename": "trophy.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "REWARD",
+            "X": 184,
+            "Y": 276,
+            "Width": 55,
+            "Height": 44,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 55,
+                "Height": 44,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "PLAY",
+            "X": 69,
+            "Y": 224,
+            "Width": 102,
+            "Height": 54,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 54,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "SELECT_1",
+            "X": 68,
+            "Y": 160,
+            "Width": 102,
+            "Height": 54,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 54,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Select",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "SELECT_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Character_2"
+            }
+          },
+          {
+            "InteractionName": "GameScreen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "PLAY"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "SakuraGameScreen"
+            }
+          },
+          {
+            "InteractionName": "REWARD",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "REWARD"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RewardScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SakuraGameScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "san_Dau",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\stage1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_100_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Filename": "bar1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_10_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar11.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_0_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar12.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_20_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar10.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_30_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar9.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_40_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar8.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_50_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar7.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_60_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar6.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_70_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_80_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_90_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_130_ID_1",
+            "X": 129,
+            "Y": -9,
+            "Width": 102,
+            "Height": 67,
+            "Filename": "mauboss.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_120_ID_1",
+            "X": 129,
+            "Y": -9,
+            "Width": 102,
+            "Height": 67,
+            "Visible": false,
+            "Filename": "mauvang_2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_110_ID_1",
+            "X": 129,
+            "Y": -9,
+            "Width": 102,
+            "Height": 67,
+            "Visible": false,
+            "Filename": "mauvang_3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_100_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_90_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth9.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_80_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth8.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_70_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth7.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_60_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth6.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_50_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_40_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_30_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_20_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_10_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_0_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth0.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "fire1",
+            "X": 82,
+            "Y": 154,
+            "Width": 85,
+            "Height": 87,
+            "Visible": false,
+            "Filename": "fire1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "fire2",
+            "X": -19,
+            "Y": 43,
+            "Width": 129,
+            "Height": 209,
+            "Visible": false,
+            "Filename": "fire2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_lose",
+            "X": 100,
+            "Y": 137,
+            "Width": 147,
+            "Height": 115,
+            "Visible": false,
+            "Filename": "dragon_lose.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_win",
+            "X": 94,
+            "Y": 62,
+            "Width": 146,
+            "Height": 172,
+            "Visible": false,
+            "Filename": "dragon.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_spe_fire",
+            "X": -11,
+            "Y": 80,
+            "Width": 186,
+            "Height": 190,
+            "Visible": false,
+            "Filename": "dragon_spe_fire.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_spe",
+            "X": 126,
+            "Y": 48,
+            "Width": 117,
+            "Height": 130,
+            "Visible": false,
+            "Filename": "dragon_spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_def",
+            "X": 100,
+            "Y": 62,
+            "Width": 140,
+            "Height": 179,
+            "Visible": false,
+            "Filename": "dragon_def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_atk",
+            "X": 94,
+            "Y": 62,
+            "Width": 152,
+            "Height": 172,
+            "Visible": false,
+            "Filename": "dragon_atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach",
+            "X": 100,
+            "Y": 62,
+            "Width": 146,
+            "Height": 172,
+            "Filename": "dragon.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto",
+            "X": 15,
+            "Y": 148,
+            "Width": 67,
+            "Height": 85,
+            "Filename": "sakura\\sakura.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_win",
+            "X": 18,
+            "Y": 145,
+            "Width": 61,
+            "Height": 91,
+            "Visible": false,
+            "Filename": "sakura\\sakura_win.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_lose",
+            "X": 23,
+            "Y": 197,
+            "Width": 71,
+            "Height": 55,
+            "Visible": false,
+            "Filename": "sakura\\sakura-lose.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_spe",
+            "X": 14,
+            "Y": 138,
+            "Width": 72,
+            "Height": 104,
+            "Visible": false,
+            "Filename": "sakura\\sakura_spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_def",
+            "X": 22,
+            "Y": 154,
+            "Width": 52,
+            "Height": 73,
+            "Visible": false,
+            "Filename": "sakura\\sakura_def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_atk",
+            "X": 38,
+            "Y": 160,
+            "Width": 88,
+            "Height": 66,
+            "Visible": false,
+            "Filename": "sakura\\sakura_atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_attack",
+            "X": 64,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_def",
+            "X": 124,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_spe",
+            "X": 184,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_arrow2",
+            "X": 2,
+            "Y": 241,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "nut1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_arrow1",
+            "X": 2,
+            "Y": 241,
+            "Width": 46,
+            "Height": 46,
+            "Filename": "nut.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Box",
+            "Name": "chakra_box1",
+            "X": 14,
+            "Y": 43,
+            "Width": 86,
+            "Height": 5,
+            "Color": {
+              "Green": 102,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "chakra_box2",
+            "X": 135,
+            "Y": 43,
+            "Width": 86,
+            "Height": 5,
+            "Color": {
+              "Green": 102,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "gameover",
+            "X": 65,
+            "Y": 6,
+            "Width": 110,
+            "Height": 157,
+            "Visible": false,
+            "Filename": "gameover.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "win",
+            "X": 65,
+            "Y": 6,
+            "Width": 110,
+            "Height": 157,
+            "Visible": false,
+            "Filename": "youwin.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "x2dame_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "x2dame.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "x2dame_1",
+            "X": 7,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "x2dame.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "healthplus_1",
+            "X": 9,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "healthplus.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "chakragain_1",
+            "X": 9,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "chakragain.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sheild_1",
+            "X": 8,
+            "Y": 59,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "shield.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sheild_2",
+            "X": 199,
+            "Y": 58,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "shield.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "chakragain_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "chakragain.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "healthplus_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "healthplus.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Character1"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "NarutoGameScreen2",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "san_Dau",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\stage1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_100_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Filename": "bar1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_10_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar11.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_0_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar12.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_20_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar10.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_30_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar9.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_40_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar8.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_50_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar7.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_60_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar6.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_70_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_80_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_90_ID",
+            "X": 5,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_130_ID_1",
+            "X": 129,
+            "Y": -9,
+            "Width": 102,
+            "Height": 67,
+            "Filename": "mauboss.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_120_ID_1",
+            "X": 129,
+            "Y": -9,
+            "Width": 102,
+            "Height": 67,
+            "Visible": false,
+            "Filename": "mauvang_2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_110_ID_1",
+            "X": 129,
+            "Y": -9,
+            "Width": 102,
+            "Height": 67,
+            "Visible": false,
+            "Filename": "mauvang_3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_100_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "bar2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_90_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth9.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_80_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth8.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_70_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth7.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_60_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth6.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_50_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth5.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_40_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth4.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_30_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_20_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_10_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "BITMAP_HP_0_ID_1",
+            "X": 126,
+            "Y": 6,
+            "Width": 105,
+            "Height": 29,
+            "Visible": false,
+            "Filename": "barbleach\\barhealth0.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "fire1",
+            "X": 82,
+            "Y": 154,
+            "Width": 85,
+            "Height": 87,
+            "Visible": false,
+            "Filename": "fire1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "fire2",
+            "X": -19,
+            "Y": 43,
+            "Width": 129,
+            "Height": 209,
+            "Visible": false,
+            "Filename": "fire2.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_lose",
+            "X": 100,
+            "Y": 137,
+            "Width": 147,
+            "Height": 115,
+            "Visible": false,
+            "Filename": "dragon_lose.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_win",
+            "X": 94,
+            "Y": 62,
+            "Width": 146,
+            "Height": 172,
+            "Visible": false,
+            "Filename": "dragon.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_spe_fire",
+            "X": -11,
+            "Y": 80,
+            "Width": 186,
+            "Height": 190,
+            "Visible": false,
+            "Filename": "dragon_spe_fire.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_spe",
+            "X": 126,
+            "Y": 48,
+            "Width": 117,
+            "Height": 130,
+            "Visible": false,
+            "Filename": "dragon_spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_def",
+            "X": 100,
+            "Y": 62,
+            "Width": 140,
+            "Height": 179,
+            "Visible": false,
+            "Filename": "dragon_def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach_atk",
+            "X": 94,
+            "Y": 62,
+            "Width": 152,
+            "Height": 172,
+            "Visible": false,
+            "Filename": "dragon_atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach",
+            "X": 100,
+            "Y": 62,
+            "Width": 146,
+            "Height": 172,
+            "Filename": "dragon.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto",
+            "X": 15,
+            "Y": 148,
+            "Width": 67,
+            "Height": 85,
+            "Filename": "naguto.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_win",
+            "X": 18,
+            "Y": 138,
+            "Width": 70,
+            "Height": 96,
+            "Visible": false,
+            "Filename": "naruto_win.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_lose",
+            "X": 23,
+            "Y": 167,
+            "Width": 71,
+            "Height": 85,
+            "Visible": false,
+            "Filename": "naruto_die.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_spe",
+            "X": 38,
+            "Y": 130,
+            "Width": 72,
+            "Height": 104,
+            "Visible": false,
+            "Filename": "naruto_spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_def",
+            "X": 15,
+            "Y": 142,
+            "Width": 67,
+            "Height": 85,
+            "Visible": false,
+            "Filename": "naruto_def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_atk",
+            "X": 38,
+            "Y": 137,
+            "Width": 72,
+            "Height": 96,
+            "Visible": false,
+            "Filename": "naruto_atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_attack",
+            "X": 64,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_def",
+            "X": 124,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_spe",
+            "X": 184,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_arrow2",
+            "X": 2,
+            "Y": 241,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "nut1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_arrow1",
+            "X": 2,
+            "Y": 241,
+            "Width": 46,
+            "Height": 46,
+            "Filename": "nut.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "Box",
+            "Name": "chakra_box1",
+            "X": 14,
+            "Y": 43,
+            "Width": 86,
+            "Height": 5,
+            "Color": {
+              "Green": 102,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "chakra_box2",
+            "X": 135,
+            "Y": 43,
+            "Width": 86,
+            "Height": 5,
+            "Color": {
+              "Green": 102,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "gameover",
+            "X": 65,
+            "Y": 6,
+            "Width": 110,
+            "Height": 157,
+            "Visible": false,
+            "Filename": "gameover.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "win",
+            "X": 65,
+            "Y": 6,
+            "Width": 110,
+            "Height": 157,
+            "Visible": false,
+            "Filename": "youwin.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "x2dame_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "x2dame.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "x2dame_1",
+            "X": 7,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "x2dame.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "healthplus_1",
+            "X": 9,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "healthplus.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "chakragain_1",
+            "X": 9,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "chakragain.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sheild_1",
+            "X": 8,
+            "Y": 59,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "shield.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sheild_2",
+            "X": 199,
+            "Y": 58,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "shield.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "chakragain_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "chakragain.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "healthplus_2",
+            "X": 199,
+            "Y": 61,
+            "Width": 32,
+            "Height": 37,
+            "Visible": false,
+            "Filename": "healthplus.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Character1"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Character1",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\CELEBRATE.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "GoHome",
+            "X": 61,
+            "Y": 23,
+            "Width": 112,
+            "Height": 77,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 112,
+                "Height": 77,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "GoHome"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "SakuraFinalScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SakuraFinalScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\main.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "title",
+            "X": 41,
+            "Y": 14,
+            "Width": 158,
+            "Height": 112,
+            "Filename": "title1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "select_img",
+            "X": 56,
+            "Y": 145,
+            "Width": 129,
+            "Height": 64,
+            "Filename": "selectcha.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "play_img",
+            "X": 57,
+            "Y": 219,
+            "Width": 124,
+            "Height": 65,
+            "Filename": "playnow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "reward",
+            "X": 184,
+            "Y": 280,
+            "Width": 55,
+            "Height": 36,
+            "Filename": "trophy.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "reward1",
+            "X": 181,
+            "Y": 280,
+            "Width": 58,
+            "Height": 40,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 58,
+                "Height": 40,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "SELECT",
+            "X": 65,
+            "Y": 152,
+            "Width": 110,
+            "Height": 50,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 110,
+                "Height": 50,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "REWARD",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "reward1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "RewardFinalScreen"
+            }
+          },
+          {
+            "InteractionName": "SELECT",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "SELECT"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Character_Final"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "RewardFinalScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Y": -6,
+            "Width": 240,
+            "Height": 334,
+            "Filename": "stage\\reward3.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "home",
+            "X": 187,
+            "Y": 278,
+            "Width": 59,
+            "Height": 42,
+            "Filename": "home.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "REWARD",
+            "X": 194,
+            "Y": 273,
+            "Width": 44,
+            "Height": 47,
+            "Alpha": 10,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 44,
+                "Height": 47,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sword",
+            "X": 25,
+            "Y": 30,
+            "Width": 61,
+            "Height": 78,
+            "Filename": "sword.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "dragontrophy",
+            "X": 82,
+            "Y": 45,
+            "Width": 82,
+            "Height": 63,
+            "Filename": "dragon_cup.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "dragontrophy_1",
+            "X": 164,
+            "Y": 30,
+            "Width": 59,
+            "Height": 85,
+            "Filename": "HEAD.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BackHome",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "REWARD"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "SakuraFinalScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Character_Final",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\pick.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto",
+            "X": 62,
+            "Y": 76,
+            "Width": 110,
+            "Height": 160,
+            "Visible": false,
+            "Filename": "naguto.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sponge",
+            "X": 57,
+            "Y": 65,
+            "Width": 132,
+            "Height": 185,
+            "Filename": "spongebob\\sponge.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "sakura",
+            "X": 62,
+            "Y": 67,
+            "Width": 116,
+            "Height": 178,
+            "Visible": false,
+            "Filename": "sakura\\sakura.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "rightarrow",
+            "X": 197,
+            "Y": 135,
+            "Width": 42,
+            "Height": 54,
+            "Filename": "rightarrow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "leftarrow",
+            "Y": 135,
+            "Width": 42,
+            "Height": 54,
+            "Filename": "leftarrow.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "spongebutton",
+            "X": 70,
+            "Y": 76,
+            "Width": 102,
+            "Height": 160,
+            "Alpha": 6,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 102,
+                "Height": 160,
+                "LockToFlexButtonSize": true,
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorBorderReleased": {
+                  "Red": 138,
+                  "Green": 138,
+                  "Blue": 138
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Sponge",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "spongebutton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Sponge"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Sponge",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "san_Dau",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "stage\\train.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "bleach",
+            "X": 131,
+            "Y": 118,
+            "Width": 120,
+            "Height": 103,
+            "Filename": "dummy.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto",
+            "X": 8,
+            "Y": 118,
+            "Width": 80,
+            "Height": 103,
+            "Filename": "spongebob\\sponge.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_spe",
+            "X": 12,
+            "Y": 78,
+            "Width": 108,
+            "Height": 143,
+            "Visible": false,
+            "Filename": "spongebob\\sponge_spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_spe_1",
+            "X": 155,
+            "Y": 47,
+            "Width": 77,
+            "Height": 122,
+            "Visible": false,
+            "Filename": "spongebob\\punch.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_def",
+            "X": 8,
+            "Y": 111,
+            "Width": 91,
+            "Height": 121,
+            "Visible": false,
+            "Filename": "spongebob\\sponge_def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "naruto_atk",
+            "X": 8,
+            "Y": 118,
+            "Width": 184,
+            "Height": 115,
+            "Visible": false,
+            "Filename": "spongebob\\sponge_atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_attack",
+            "X": 64,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "atk.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_def",
+            "X": 124,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "def.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_spe",
+            "X": 184,
+            "Y": 242,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "spe.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_arrow2",
+            "X": 2,
+            "Y": 241,
+            "Width": 46,
+            "Height": 46,
+            "Visible": false,
+            "Filename": "nut1.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "btn_arrow1",
+            "X": 2,
+            "Y": 241,
+            "Width": 46,
+            "Height": 46,
+            "Filename": "nut.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "home",
+            "X": 198,
+            "Y": 292,
+            "Width": 42,
+            "Height": 28,
+            "Filename": "home.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "REWARD",
+            "X": 205,
+            "Y": 287,
+            "Width": 27,
+            "Height": 33,
+            "Alpha": 10,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 27,
+                "Height": 33,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 5,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Home",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "REWARD"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "SakuraFinalScreen"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "MyApplication_2",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "MainMenuScreen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}

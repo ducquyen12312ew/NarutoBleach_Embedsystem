@@ -1,0 +1,8 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/win_scene_screen/WIN_SCENEView.cpp:13:6:virtual void WIN_SCENEView::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/win_scene_screen/WIN_SCENEView.hpp:11:13:WIN_SCENEView::~WIN_SCENEView()	8	static
+../../TouchGFX/gui/include/gui/win_scene_screen/WIN_SCENEView.hpp:11:13:virtual WIN_SCENEView::~WIN_SCENEView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/win_scene_screen/WIN_SCENEView.cpp:3:1:WIN_SCENEView::WIN_SCENEView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/win_scene_screen/WIN_SCENEView.cpp:8:6:virtual void WIN_SCENEView::setupScreen()	0	static

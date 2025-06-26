@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/mainmenuscreen_screen/MainMenuScreenPresenter.hpp:28:13:MainMenuScreenPresenter::~MainMenuScreenPresenter()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/mainmenuscreen_screen/MainMenuScreenPresenter.cpp:10:6:virtual void MainMenuScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/mainmenuscreen_screen/MainMenuScreenPresenter.hpp:28:13:virtual MainMenuScreenPresenter::~MainMenuScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/mainmenuscreen_screen/MainMenuScreenPresenter.hpp:28:13:virtual void* MainMenuScreenPresenter::_ZThn4_N23MainMenuScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/mainmenuscreen_screen/MainMenuScreenPresenter.cpp:4:1:MainMenuScreenPresenter::MainMenuScreenPresenter(MainMenuScreenView&)	0	static

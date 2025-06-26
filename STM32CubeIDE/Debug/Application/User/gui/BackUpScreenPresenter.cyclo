@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenPresenter.hpp:28:13:BackUpScreenPresenter::~BackUpScreenPresenter()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/backupscreen_screen/BackUpScreenPresenter.cpp:10:6:virtual void BackUpScreenPresenter::activate()	1
+../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenPresenter.hpp:28:13:virtual BackUpScreenPresenter::~BackUpScreenPresenter()	1
+../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenPresenter.hpp:28:13:virtual void* BackUpScreenPresenter::_ZThn4_N21BackUpScreenPresenterD1Ev()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/backupscreen_screen/BackUpScreenPresenter.cpp:4:1:BackUpScreenPresenter::BackUpScreenPresenter(BackUpScreenView&)	1

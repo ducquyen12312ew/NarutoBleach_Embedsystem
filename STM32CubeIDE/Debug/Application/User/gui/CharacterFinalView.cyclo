@@ -1,0 +1,8 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/characterfinal_screen/CharacterFinalView.cpp:13:6:virtual void CharacterFinalView::tearDownScreen()	1
+../../TouchGFX/gui/include/gui/characterfinal_screen/CharacterFinalView.hpp:11:13:CharacterFinalView::~CharacterFinalView()	1
+../../TouchGFX/gui/include/gui/characterfinal_screen/CharacterFinalView.hpp:11:13:virtual CharacterFinalView::~CharacterFinalView()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/characterfinal_screen/CharacterFinalView.cpp:3:1:CharacterFinalView::CharacterFinalView()	1
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/characterfinal_screen/CharacterFinalView.cpp:8:6:virtual void CharacterFinalView::setupScreen()	1

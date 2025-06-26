@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/rewardfinalscreen_screen/RewardFinalScreenPresenter.hpp:28:13:RewardFinalScreenPresenter::~RewardFinalScreenPresenter()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/rewardfinalscreen_screen/RewardFinalScreenPresenter.cpp:10:6:virtual void RewardFinalScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/rewardfinalscreen_screen/RewardFinalScreenPresenter.hpp:28:13:virtual RewardFinalScreenPresenter::~RewardFinalScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/rewardfinalscreen_screen/RewardFinalScreenPresenter.hpp:28:13:virtual void* RewardFinalScreenPresenter::_ZThn4_N26RewardFinalScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/rewardfinalscreen_screen/RewardFinalScreenPresenter.cpp:4:1:RewardFinalScreenPresenter::RewardFinalScreenPresenter(RewardFinalScreenView&)	0	static

@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/sponggamescreen_screen/SpongGameScreenPresenter.hpp:28:13:SpongGameScreenPresenter::~SpongGameScreenPresenter()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponggamescreen_screen/SpongGameScreenPresenter.cpp:10:6:virtual void SpongGameScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/sponggamescreen_screen/SpongGameScreenPresenter.hpp:28:13:virtual SpongGameScreenPresenter::~SpongGameScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/sponggamescreen_screen/SpongGameScreenPresenter.hpp:28:13:virtual void* SpongGameScreenPresenter::_ZThn4_N24SpongGameScreenPresenterD1Ev()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/sponggamescreen_screen/SpongGameScreenPresenter.cpp:4:1:SpongGameScreenPresenter::SpongGameScreenPresenter(SpongGameScreenView&)	0	static
