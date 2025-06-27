@@ -77,16 +77,7 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp \
- ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
- ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp \
- ../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/backupscreen_screen/BackUpScreenViewBase.hpp \
- ../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenPresenter.hpp \
- ../../TouchGFX/gui/include/gui/character_screen/CharacterView.hpp \
- ../../TouchGFX/generated/gui_generated/include/gui_generated/character_screen/CharacterViewBase.hpp \
- ../../TouchGFX/gui/include/gui/character_screen/CharacterPresenter.hpp \
- ../../Core/Inc/main.h \
+ ../../Core/Inc/audio_system.h ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -123,6 +114,16 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/backupscreen_screen/BackUpScreenViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenPresenter.hpp \
+ ../../TouchGFX/gui/include/gui/character_screen/CharacterView.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/character_screen/CharacterViewBase.hpp \
+ ../../TouchGFX/gui/include/gui/character_screen/CharacterPresenter.hpp \
+ ../../Core/Inc/main.h \
  ../../TouchGFX/gui/include/gui/character_2_screen/Character_2View.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/character_2_screen/Character_2ViewBase.hpp \
  ../../TouchGFX/gui/include/gui/character_2_screen/Character_2Presenter.hpp \
@@ -255,15 +256,7 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/TwoWildcardTextButtonStyle.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/buttons/WildcardTextButtonStyle.hpp:
-../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp:
-../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp:
-../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/backupscreen_screen/BackUpScreenViewBase.hpp:
-../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenPresenter.hpp:
-../../TouchGFX/gui/include/gui/character_screen/CharacterView.hpp:
-../../TouchGFX/generated/gui_generated/include/gui_generated/character_screen/CharacterViewBase.hpp:
-../../TouchGFX/gui/include/gui/character_screen/CharacterPresenter.hpp:
+../../Core/Inc/audio_system.h:
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../../Core/Inc/stm32f4xx_hal_conf.h:
@@ -301,6 +294,16 @@ Application/User/TouchGFX/target/generated/TouchGFXGeneratedHAL.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp:
+../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp:
+../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/backupscreen_screen/BackUpScreenViewBase.hpp:
+../../TouchGFX/gui/include/gui/backupscreen_screen/BackUpScreenPresenter.hpp:
+../../TouchGFX/gui/include/gui/character_screen/CharacterView.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/character_screen/CharacterViewBase.hpp:
+../../TouchGFX/gui/include/gui/character_screen/CharacterPresenter.hpp:
+../../Core/Inc/main.h:
 ../../TouchGFX/gui/include/gui/character_2_screen/Character_2View.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/character_2_screen/Character_2ViewBase.hpp:
 ../../TouchGFX/gui/include/gui/character_2_screen/Character_2Presenter.hpp:

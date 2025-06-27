@@ -1,9 +1,13 @@
-// MainMenuScreenView.hpp
 #ifndef MAINMENUSCREENVIEW_HPP
 #define MAINMENUSCREENVIEW_HPP
 
 #include <gui_generated/mainmenuscreen_screen/MainMenuScreenViewBase.hpp>
 #include <gui/mainmenuscreen_screen/MainMenuScreenPresenter.hpp>
+
+// Add C header for audio system
+extern "C" {
+    #include "audio_system.h"
+}
 
 class MainMenuScreenView : public MainMenuScreenViewBase
 {
@@ -13,9 +17,11 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-protected:
+    virtual void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
+protected:
 private:
+    bool audioInitialized;
 };
 
 #endif // MAINMENUSCREENVIEW_HPP

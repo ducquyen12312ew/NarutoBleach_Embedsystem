@@ -1,8 +1,9 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/mainmenuscreen_screen/MainMenuScreenView.cpp:13:6:virtual void MainMenuScreenView::tearDownScreen()	0	static
-../../TouchGFX/gui/include/gui/mainmenuscreen_screen/MainMenuScreenView.hpp:12:13:MainMenuScreenView::~MainMenuScreenView()	8	static
-../../TouchGFX/gui/include/gui/mainmenuscreen_screen/MainMenuScreenView.hpp:12:13:virtual MainMenuScreenView::~MainMenuScreenView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/mainmenuscreen_screen/MainMenuScreenView.cpp:21:6:virtual void MainMenuScreenView::tearDownScreen()	0	static
+../../TouchGFX/gui/include/gui/mainmenuscreen_screen/MainMenuScreenView.hpp:16:13:MainMenuScreenView::~MainMenuScreenView()	8	static
+../../TouchGFX/gui/include/gui/mainmenuscreen_screen/MainMenuScreenView.hpp:16:13:virtual MainMenuScreenView::~MainMenuScreenView()	8	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/mainmenuscreen_screen/MainMenuScreenView.cpp:29:6:virtual void MainMenuScreenView::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer&)	16	static
 C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/mainmenuscreen_screen/MainMenuScreenView.cpp:3:1:MainMenuScreenView::MainMenuScreenView()	8	static
-C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/mainmenuscreen_screen/MainMenuScreenView.cpp:8:6:virtual void MainMenuScreenView::setupScreen()	0	static
+C:/TouchGFXProjects/Nhung/Nhung/Nhung/MyApplication_2/TouchGFX/gui/src/mainmenuscreen_screen/MainMenuScreenView.cpp:7:6:virtual void MainMenuScreenView::setupScreen()	8	static
