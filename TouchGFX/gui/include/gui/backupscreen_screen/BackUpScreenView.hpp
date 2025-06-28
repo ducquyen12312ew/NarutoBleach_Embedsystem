@@ -14,4 +14,4 @@ public:
 protected:
 };
 
-#endif // BACKUPSCREENVIEW_HPP
+#endif

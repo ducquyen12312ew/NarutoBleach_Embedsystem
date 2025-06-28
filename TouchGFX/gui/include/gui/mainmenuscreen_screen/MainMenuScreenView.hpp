@@ -4,7 +4,7 @@
 #include <gui_generated/mainmenuscreen_screen/MainMenuScreenViewBase.hpp>
 #include <gui/mainmenuscreen_screen/MainMenuScreenPresenter.hpp>
 
-// Add C header for audio system
+
 extern "C" {
     #include "audio_system.h"
 }
@@ -24,4 +24,4 @@ private:
     bool audioInitialized;
 };
 
-#endif // MAINMENUSCREENVIEW_HPP
+#endif

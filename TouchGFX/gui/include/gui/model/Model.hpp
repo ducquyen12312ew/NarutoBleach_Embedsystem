@@ -18,4 +18,4 @@ protected:
     ModelListener* modelListener;
 };
 
-#endif // MODEL_HPP
+#endif

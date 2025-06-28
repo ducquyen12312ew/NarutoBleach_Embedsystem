@@ -15,33 +15,26 @@ public:
     virtual void handleTickEvent();
 
 protected:
-    // Constants
-    static const int RESET_TIME_MS = 2000; // 2 seconds to return to normal state
+    static const int RESET_TIME_MS = 2000;
 
-    // Timer system
     int resetTimer;
     bool resetTimerActive;
 
-    // Menu system
     bool menuOpen;
 
-    // GPIO and LED functions
     void initGPIO();
     void toggleLED();
 
-    // Menu functions
     void hideActionButtons();
     void showActionButtons();
     void toggleActionMenu();
 
-    // Training actions (no combat logic, just animations)
     void performAttack();
     void performDefend();
     void performSpecial();
 
-    // Character state management
     void resetSpongeState();
     void startResetTimer();
 };
 
-#endif // SPONGEVIEW_HPP
+#endif

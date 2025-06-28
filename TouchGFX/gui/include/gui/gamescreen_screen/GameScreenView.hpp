@@ -11,50 +11,40 @@ public:
     virtual ~GameScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-
     virtual void handleClickEvent(const ClickEvent& evt);
     virtual void handleDragEvent(const DragEvent& evt);
     virtual void handleTickEvent();
 
-    // Menu functions
     void hideActionButtons();
     void showActionButtons();
     void toggleActionMenu();
 
-    // Combat functions
     void playerAttack();
     void playerDefend();
     void playerSpecial();
 
-    // AI functions
     void performAIAction();
     void aiAttack();
     void aiDefend();
     void aiSpecial();
 
-    // Updated calculateDamage với power-up support
     int calculateDamage(int baseDamage, bool isDefending, bool hasDoubleAttack, bool hasShield);
 
-    // HP display functions
     void updatePlayerHPDisplay();
     void updateAIHPDisplay();
     void hideAllPlayerHPWidgets();
     void hideAllAIHPWidgets();
 
-    // Chakra system functions
     void updatePlayerChakraDisplay();
     void updateAIChakraDisplay();
 
-    // Character state functions
     void resetNarutoState();
     void resetBleachState();
     void startResetTimer();
 
-    // Game end functions
     void checkGameEnd();
     void endGame(bool playerWon);
 
-    // Power-Up System functions
     void checkTurnComplete();
     void giveRandomPowerUps();
     void giveRandomPowerUpsAlternative();
@@ -66,67 +56,55 @@ public:
     void hideAllAIPowerUps();
     void clearPowerUpAfterUse(bool isPlayer);
 
-    // Damage display system
     void showDamageText(int playerDamage, int aiDamage);
     void hideDamageText();
     void updateDamageDisplay();
 
-    // Utility functions
     int generateRandomNumber(int min, int max);
     void gainChakra(int amount);
     void useChakra(int amount);
 
-    // GPIO functions
     void initGPIO();
     void toggleLED();
 
-    // Debug functions
     void debugGameState();
 
 protected:
-    // Game state
     int playerHP;
     int aiHP;
     bool menuOpen;
     bool gameEnded;
     bool playerWonGame;
 
-    // Chakra system
-    int playerChakraLevel; // 0-100
-    int aiChakraLevel; // 0-100 (cho AI)
+    int playerChakraLevel;
+    int aiChakraLevel;
 
-    // Combat state
     bool playerDefending;
     bool aiDefending;
     bool playerSpecialUsed;
     bool aiSpecialUsed;
 
-    // AI personality (0=Aggressive, 1=Defensive, 2=Random)
     int aiPersonality;
 
-    // ===== TIMER SYSTEM =====
     int resetTimer;
     bool resetTimerActive;
-    int autoReturnTimer; // Timer để tự động về main menu sau 6 giây
+    int autoReturnTimer;
     bool autoReturnTimerActive;
-    static const int RESET_TIME_MS = 1000; // 1 second
-    static const int AUTO_RETURN_TIME_MS = 6000; // 6 seconds delay before returning to menu
+    static const int RESET_TIME_MS = 1000;
+    static const int AUTO_RETURN_TIME_MS = 6000;
 
-    // Power-Up System variables
     int turnCounter;
-    int playerPowerUpType; // 0=none, 1=damage, 2=heal, 3=chakra, 4=shield
+    int playerPowerUpType;
     int aiPowerUpType;
     bool playerPowerUpActive;
     bool aiPowerUpActive;
     bool playerActionDone;
     bool aiActionDone;
 
-    // Damage display system variables
     int damageDisplayTimer;
     bool damageDisplayActive;
-    static const int DAMAGE_DISPLAY_TIME_MS = 1500; // 1.5 giây hiển thị damage text
+    static const int DAMAGE_DISPLAY_TIME_MS = 1500;
 
-    // Tracking variables for damage display
     int currentDamageAmount;
     bool isPlayerDamage;
     int currentPlayerDamage;
@@ -134,7 +112,6 @@ protected:
     bool playerDamageActive;
     bool aiDamageActive;
 
-    // Animation variables for damage text movement
     int damageTextStartY;
     int damageTextAIStartY;
     static const int DAMAGE_TEXT_MOVE_DISTANCE = 30;
@@ -143,4 +120,4 @@ protected:
     uint32_t randomSeed;
 };
 
-#endif // GAMESCREEN_VIEW_HPP
+#endif

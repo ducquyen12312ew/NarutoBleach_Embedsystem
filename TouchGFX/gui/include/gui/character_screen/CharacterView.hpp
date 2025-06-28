@@ -24,7 +24,6 @@ protected:
 
     int currentCharacterIndex;
 
-    // Static variables to track unlock status
     static bool sakuraUnlocked;
     static bool spongeUnlocked;
 
@@ -37,13 +36,11 @@ protected:
     void rightArrowClicked();
 
 public:
-    // Static methods to unlock characters (call from GameScreen)
     static void unlockSakura() { sakuraUnlocked = true; }
     static void unlockSponge() { spongeUnlocked = true; }
     static void resetProgress() { sakuraUnlocked = false; spongeUnlocked = false; }
 
-    // Test method để unlock trong character screen
     void testUnlock();
 };
 
-#endif // CHARACTERVIEW_HPP
+#endif

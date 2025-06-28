@@ -14,4 +14,4 @@ public:
 protected:
 };
 
-#endif // CHARACTER1VIEW_HPP
+#endif

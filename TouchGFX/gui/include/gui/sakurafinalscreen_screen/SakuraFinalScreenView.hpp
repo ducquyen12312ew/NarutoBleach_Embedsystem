@@ -14,4 +14,4 @@ public:
 protected:
 };
 
-#endif // SAKURAFINALSCREENVIEW_HPP
+#endif

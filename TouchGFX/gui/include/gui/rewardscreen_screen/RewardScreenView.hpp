@@ -14,4 +14,4 @@ public:
 protected:
 };
 
-#endif // REWARDSCREENVIEW_HPP
+#endif

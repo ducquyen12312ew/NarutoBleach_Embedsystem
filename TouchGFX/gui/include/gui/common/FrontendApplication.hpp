@@ -21,4 +21,4 @@ public:
 private:
 };
 
-#endif // FRONTENDAPPLICATION_HPP
+#endif

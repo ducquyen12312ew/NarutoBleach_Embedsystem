@@ -25,10 +25,10 @@ protected:
     int currentCharacterIndex;
     void showCurrentCharacter();
     void hideAllCharacters();
-    void hideAllButtons(); // Thêm hàm ẩn buttons
+    void hideAllButtons();
     void testLED();
     void leftArrowClicked();
     void rightArrowClicked();
 };
 
-#endif // CHARACTER_2VIEW_HPP
+#endif
