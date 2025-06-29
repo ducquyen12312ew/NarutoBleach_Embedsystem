@@ -15,75 +15,64 @@ NarutoGameScreen2View::NarutoGameScreen2View()
     fireLoopCounter = 0;
     specialFireToggle = false;
 
-    // ===== BOSS SYSTEM INITIALIZATION =====
     bossPhase = 1;
-    bossMaxHP = 130; // Boss có 130 HP: 30 HP từ 3 mauboss + 100 HP bình thường
+    bossMaxHP = 130;
     bossCurrentHP = 130;
     rageMode = false;
     rageModeTimer = 0;
 
     easterEggActivated = false;
-     easterEggTimer = 0;
+    easterEggTimer = 0;
 }
 
 void NarutoGameScreen2View::setupScreen()
 {
-	NarutoGameScreen2ViewBase::setupScreen();
+    NarutoGameScreen2ViewBase::setupScreen();
     initGPIO();
 
-    // Improved random seed
     randomSeed = HAL_GetTick();
     if (randomSeed == 0) randomSeed = 12345;
     randomSeed = (randomSeed * 1664525 + 1013904223);
 
-    // Initialize game state
     playerHP = 100;
-    bossCurrentHP = bossMaxHP; // Boss bắt đầu với 130 HP
+    bossCurrentHP = bossMaxHP;
     playerChakraLevel = 0;
     aiChakraLevel = 0;
     menuOpen = false;
     gameEnded = false;
 
-    // Initialize combat state
     playerDefending = false;
     aiDefending = false;
     playerSpecialUsed = false;
     aiSpecialUsed = false;
 
-    // Initialize boss-specific variables
     bossPhase = 1;
     rageMode = false;
     rageModeTimer = 0;
 
-    // Initialize power-up system (chỉ cho player)
     turnCounter = 0;
     playerPowerUpType = 0;
-    aiPowerUpType = 0; // Boss không có power-up
+    aiPowerUpType = 0;
     playerPowerUpActive = false;
-    aiPowerUpActive = false; // Boss không dùng power-up
+    aiPowerUpActive = false;
     playerActionDone = false;
     aiActionDone = false;
 
-    // ===== BOSS KHÔNG CÓ PERSONALITY RANDOM - CHỈ ADAPTIVE =====
-    aiPersonality = 0; // 3 = Adaptive Boss Mode
+    aiPersonality = 0;
 
-    // ===== TIMER SYSTEM =====
     resetTimer = 0;
     resetTimerActive = false;
     autoReturnTimer = 0;
     autoReturnTimerActive = false;
 
-    // Hide all power-up icons when starting
     hideAllPlayerPowerUps();
-    hideAllAIPowerUps(); // Boss không có power-up nhưng vẫn hide để đảm bảo
+    hideAllAIPowerUps();
 
-    // Update initial UI
     updatePlayerHPDisplay();
-    updateBossHPDisplay(); // Sử dụng hàm mới cho boss
+    updateBossHPDisplay();
     updatePlayerChakraDisplay();
     updateAIChakraDisplay();
 
-    // Ensure both characters are in normal state when starting
     resetNarutoState();
     resetBleachState();
 
@@ -97,7 +86,7 @@ void NarutoGameScreen2View::setupScreen()
     forceBossHPVisible();
 
     easterEggActivated = false;
-        easterEggTimer = 0;
+    easterEggTimer = 0;
 }
 
 void NarutoGameScreen2View::hideAllFireEffects()
@@ -116,13 +105,11 @@ void NarutoGameScreen2View::startAttackFireAnimation()
     hideAllFireEffects();
     fireAnimationTimer = 0;
     fireAnimationActive = true;
-    fireAnimationState = 1; // Bắt đầu với fire1
+    fireAnimationState = 1;
 
-    // Hiển thị fire1
     fire1.setVisible(true);
     fire1.invalidate();
 
-    // Debug LED
     toggleLED();
 }
 
@@ -131,15 +118,13 @@ void NarutoGameScreen2View::startSpecialFireAnimation()
     hideAllFireEffects();
     fireAnimationTimer = 0;
     fireAnimationActive = true;
-    fireAnimationState = 3; // Special fire blink
+    fireAnimationState = 3;
     fireLoopCounter = 0;
-    specialFireToggle = true; // Bắt đầu với visible
+    specialFireToggle = true;
 
-    // Bắt đầu với bleach_spe_fire visible
     bleach_spe_fire.setVisible(true);
     bleach_spe_fire.invalidate();
 
-    // Debug LED pattern for special
     for (int i = 0; i < 4; i++) {
         toggleLED();
     }
@@ -149,12 +134,11 @@ void NarutoGameScreen2View::updateFireAnimation()
 {
     if (!fireAnimationActive) return;
 
-    fireAnimationTimer += 16; // TouchGFX tick ~16ms
+    fireAnimationTimer += 16;
 
     switch (fireAnimationState) {
-        case 1: // Fire1 đang hiển thị (cho attack)
+        case 1:
             if (fireAnimationTimer >= FIRE_ANIMATION_DURATION) {
-                // Chuyển sang fire2
                 fire1.setVisible(false);
                 fire2.setVisible(true);
                 fire1.invalidate();
@@ -162,30 +146,26 @@ void NarutoGameScreen2View::updateFireAnimation()
 
                 fireAnimationState = 2;
                 fireAnimationTimer = 0;
-                toggleLED(); // Debug
+                toggleLED();
             }
             break;
 
-        case 2: // Fire2 đang hiển thị (cho attack)
+        case 2:
             if (fireAnimationTimer >= FIRE_ANIMATION_DURATION) {
-                // Kết thúc animation
                 hideAllFireEffects();
                 fireAnimationActive = false;
                 fireAnimationState = 0;
                 fireAnimationTimer = 0;
 
-                // SỬA: THAY aiHP THÀNH bossCurrentHP
                 if (!gameEnded && bossCurrentHP > 0) {
                     aiActionDone = true;
-                    toggleLED(); // Debug: animation complete
+                    toggleLED();
                 }
             }
             break;
 
-        case 3: // Special fire blink - CHỈ NHẤP NHÁY bleach_spe_fire
-            // Toggle every FIRE_LOOP_INTERVAL (0.3 giây)
+        case 3:
             if (fireAnimationTimer >= FIRE_LOOP_INTERVAL) {
-                // Toggle bleach_spe_fire on/off
                 specialFireToggle = !specialFireToggle;
                 bleach_spe_fire.setVisible(specialFireToggle);
                 bleach_spe_fire.invalidate();
@@ -193,15 +173,12 @@ void NarutoGameScreen2View::updateFireAnimation()
                 fireAnimationTimer = 0;
                 fireLoopCounter += FIRE_LOOP_INTERVAL;
 
-                // Debug LED mỗi toggle
                 toggleLED();
             }
 
-            // Kết thúc sau 3 giây
-            if (fireLoopCounter >= 3000) { // 3000ms = 3 giây
+            if (fireLoopCounter >= 3000) {
                 hideAllFireEffects();
 
-                // ===== ẨN bleach_spe CUỐI CÙNG =====
                 bleach_spe.setVisible(false);
                 bleach_spe.invalidate();
 
@@ -210,12 +187,10 @@ void NarutoGameScreen2View::updateFireAnimation()
                 fireAnimationTimer = 0;
                 fireLoopCounter = 0;
 
-                // SỬA: THAY aiHP THÀNH bossCurrentHP
                 if (!gameEnded && bossCurrentHP > 0) {
                     aiActionDone = true;
                     aiSpecialUsed = true;
 
-                    // Debug: special animation complete
                     for (int i = 0; i < 5; i++) {
                         toggleLED();
                     }
@@ -227,7 +202,7 @@ void NarutoGameScreen2View::updateFireAnimation()
 
 void NarutoGameScreen2View::tearDownScreen()
 {
-	NarutoGameScreen2ViewBase::tearDownScreen();
+    NarutoGameScreen2ViewBase::tearDownScreen();
 }
 
 void NarutoGameScreen2View::initGPIO()
@@ -296,63 +271,51 @@ void NarutoGameScreen2View::toggleActionMenu()
 void NarutoGameScreen2View::handleClickEvent(const ClickEvent& evt)
 {
     if (evt.getType() == ClickEvent::PRESSED) {
-    	if (!gameEnded && !easterEggActivated) {
-    	            // Kiểm tra click vào vùng con rồng (bleach)
-    	            // Vùng con rồng khoảng: x: 94-240, y: 62-234 (tùy thuộc vào sprite size)
-    	            if (evt.getX() >= 94 && evt.getX() <= 240 &&
-    	                evt.getY() >= 62 && evt.getY() <= 234) {
+        if (!gameEnded && !easterEggActivated) {
+            if (evt.getX() >= 94 && evt.getX() <= 240 &&
+                evt.getY() >= 62 && evt.getY() <= 234) {
 
-    	                // KÍCH HOẠT EASTER EGG
-    	                activateEasterEgg();
-    	                return;
-    	            }
-    	        }
-        // DEBUG: Click góc trên trái để giảm boss HP
+                activateEasterEgg();
+                return;
+            }
+        }
+
         if (evt.getX() < 50 && evt.getY() < 50) {
-            // Simple debug: Giảm HP 30 điểm mỗi lần click
             bossCurrentHP -= 30;
             if (bossCurrentHP < 0) bossCurrentHP = 0;
             updateBossHPDisplay();
             return;
         }
 
-        // DEBUG: Click góc trên phải để force kill PLAYER
         if (evt.getX() > 190 && evt.getY() < 50) {
             playerHP = 0;
             updatePlayerHPDisplay();
             return;
         }
 
-        // DEBUG: Click góc dưới trái để kiểm tra game state
         if (evt.getX() < 50 && evt.getY() > 270) {
-            // LED pattern đơn giản để debug
             for (int i = 0; i < 3; i++) {
                 toggleLED();
             }
             return;
         }
 
-        // DEBUG: Click góc dưới phải để GUARANTEED power-up cho player
         if (evt.getX() > 190 && evt.getY() > 270 && !gameEnded) {
-            givePlayerPowerUp(); // Chỉ player nhận power-up
+            givePlayerPowerUp();
             return;
         }
 
-        // DEBUG: Click giữa dưới để xem turn counter + force complete turn
         if (evt.getX() > 100 && evt.getX() < 140 && evt.getY() > 270 && !gameEnded) {
-            // LED blink theo số turn hiện tại
             for (int i = 0; i < turnCounter + 1; i++) {
                 toggleLED();
             }
 
-            // Force complete turn
             playerActionDone = true;
             aiActionDone = true;
             checkTurnComplete();
             return;
         }
 
-        // Game logic bình thường
         if (gameEnded) {
             if (btn_attack.getAbsoluteRect().intersect(evt.getX(), evt.getY()) ||
                 btn_def.getAbsoluteRect().intersect(evt.getX(), evt.getY()) ||
@@ -399,21 +362,18 @@ void NarutoGameScreen2View::handleClickEvent(const ClickEvent& evt)
     NarutoGameScreen2ViewBase::handleClickEvent(evt);
 }
 
-
 void NarutoGameScreen2View::handleDragEvent(const DragEvent& evt)
 {
-	NarutoGameScreen2ViewBase::handleDragEvent(evt);
+    NarutoGameScreen2ViewBase::handleDragEvent(evt);
 }
 
 void NarutoGameScreen2View::handleTickEvent()
 {
-    // FORCE REFRESH BOSS HP MỖI FRAME ĐẦU TIÊN
     static int frameCounter = 0;
     if (frameCounter < 10 && !gameEnded) {
         frameCounter++;
         updateBossHPDisplay();
 
-        // Extra debug LED
         if (frameCounter == 5) {
             toggleLED();
             toggleLED();
@@ -421,25 +381,19 @@ void NarutoGameScreen2View::handleTickEvent()
         }
     }
 
-    // ===== XỬ LÝ EASTER EGG TIMER TRƯỚC TIÊN =====
     if (easterEggActivated) {
-        easterEggTimer += 16; // TouchGFX tick ~16ms
+        easterEggTimer += 16;
 
-        // Sau 3 giây, chuyển thẳng về WIN_SCENE
         if (easterEggTimer >= EASTER_EGG_WIN_TIME) {
-            // Tắt LED trước khi chuyển screen
             HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
 
-            // CHUYỂN VỀ WIN_SCENE (thay đổi tên screen tùy project)
             application().gotoCharacter1ScreenNoTransition();
             return;
         }
-        return; // Không xử lý logic game khác khi Easter Egg active
+        return;
     }
 
-    // Only process timers when game hasn't ended
     if (!gameEnded) {
-        // Handle auto reset timer
         if (resetTimerActive) {
             resetTimer += 16;
             if (resetTimer >= RESET_TIME_MS) {
@@ -456,17 +410,13 @@ void NarutoGameScreen2View::handleTickEvent()
             }
         }
 
-        // ===== UPDATE RAGE MODE TIMER =====
         if (rageMode) {
             rageModeTimer += 16;
-            // Có thể thêm effect visual cho rage mode ở đây
         }
 
-        // Update fire animation
         updateFireAnimation();
 
     } else {
-        // Auto return timer when game ended (NORMAL END GAME)
         if (autoReturnTimerActive) {
             autoReturnTimer += 16;
 
@@ -483,7 +433,6 @@ void NarutoGameScreen2View::handleTickEvent()
 
 void NarutoGameScreen2View::hideAllBossHPWidgets()
 {
-    // Hide all boss HP widgets (bao gồm cả 130, 120, 110)
     BITMAP_HP_130_ID_1.setVisible(false);
     BITMAP_HP_120_ID_1.setVisible(false);
     BITMAP_HP_110_ID_1.setVisible(false);
@@ -499,7 +448,6 @@ void NarutoGameScreen2View::hideAllBossHPWidgets()
     BITMAP_HP_10_ID_1.setVisible(false);
     BITMAP_HP_0_ID_1.setVisible(false);
 
-    // Invalidate all
     BITMAP_HP_130_ID_1.invalidate();
     BITMAP_HP_120_ID_1.invalidate();
     BITMAP_HP_110_ID_1.invalidate();
@@ -518,13 +466,11 @@ void NarutoGameScreen2View::hideAllBossHPWidgets()
 
 void NarutoGameScreen2View::forceBossHPVisible()
 {
-    // FORCE SHOW BITMAP_HP_130_ID_1 khi bắt đầu game
-    if (bossCurrentHP >= 125) { // Boss bắt đầu với 130 HP
+    if (bossCurrentHP >= 125) {
         BITMAP_HP_130_ID_1.setVisible(true);
         BITMAP_HP_130_ID_1.setAlpha(255);
         BITMAP_HP_130_ID_1.invalidate();
 
-        // Debug confirmation
         toggleLED();
         toggleLED();
         toggleLED();
@@ -532,8 +478,6 @@ void NarutoGameScreen2View::forceBossHPVisible()
         toggleLED();
     }
 }
-// ==================== POWER-UP SYSTEM ====================
-
 
 void NarutoGameScreen2View::checkTurnComplete()
 {
@@ -542,23 +486,17 @@ void NarutoGameScreen2View::checkTurnComplete()
 
         toggleLED();
 
-        // ===== ONLY PLAYER GETS POWER-UPS =====
         if (!playerSpecialUsed && !aiSpecialUsed) {
-            // TĂNG CHANCE POWER-UP CHO PLAYER KHI ĐẤU BOSS: 25% thay vì 20%
             int powerUpChance = generateRandomNumber(1, 100);
             if (powerUpChance <= 25) {
-                givePlayerPowerUp(); // Chỉ player nhận power-up
+                givePlayerPowerUp();
             }
         }
 
-        // Clear player power-ups after use
         if (playerPowerUpActive && (playerPowerUpType == 2 || playerPowerUpType == 3 || playerPowerUpType == 4)) {
             clearPowerUpAfterUse(true);
         }
 
-        // Boss không có power-up để clear
-
-        // Reset
         playerActionDone = false;
         aiActionDone = false;
         playerSpecialUsed = false;
@@ -568,25 +506,21 @@ void NarutoGameScreen2View::checkTurnComplete()
 
 void NarutoGameScreen2View::givePlayerPowerUp()
 {
-    // ENHANCED POWER-UP FOR BOSS FIGHT
     for (int i = 0; i < 3; i++) {
         toggleLED();
     }
-
-    // ===== ENHANCED DISTRIBUTION WHEN FIGHTING BOSS =====
-    // Shield 30%, X2Dame 25%, Healthplus 25%, Chakragain 20%
 
     int playerRoll = generateRandomNumber(1, 100);
     int newPlayerPowerUp;
 
     if (playerRoll >= 1 && playerRoll <= 30) {
-        newPlayerPowerUp = 4; // 30% - Shield
+        newPlayerPowerUp = 4;
     } else if (playerRoll >= 31 && playerRoll <= 55) {
-        newPlayerPowerUp = 1; // 25% - Double Damage
+        newPlayerPowerUp = 1;
     } else if (playerRoll >= 56 && playerRoll <= 80) {
-        newPlayerPowerUp = 2; // 25% - Heal (ENHANCED)
+        newPlayerPowerUp = 2;
     } else {
-        newPlayerPowerUp = 3; // 20% - Chakra
+        newPlayerPowerUp = 3;
     }
 
     playerPowerUpType = newPlayerPowerUp;
@@ -597,67 +531,62 @@ void NarutoGameScreen2View::givePlayerPowerUp()
 
 void NarutoGameScreen2View::applyInstantPowerUp(bool isPlayer, int type)
 {
-    if (!isPlayer) return; // Boss không có power-up
+    if (!isPlayer) return;
 
     switch (type) {
-        case 1: // Double Damage - chờ đến khi combat
+        case 1:
             break;
 
-        case 2: // Heal - ENHANCED CHO BOSS FIGHT
-            playerHP += 8; // TĂNG TỪ 5 LÊN 8
+        case 2:
+            playerHP += 8;
             if (playerHP > 100) playerHP = 100;
             updatePlayerHPDisplay();
             break;
 
-        case 3: // Chakra - ENHANCED CHO BOSS FIGHT
-            playerChakraLevel += 20; // TĂNG TỪ 15 LÊN 20
+        case 3:
+            playerChakraLevel += 20;
             if (playerChakraLevel > 100) playerChakraLevel = 100;
             updatePlayerChakraDisplay();
             break;
 
-        case 4: // Shield
+        case 4:
             break;
     }
 }
 
-
 void NarutoGameScreen2View::updatePlayerPowerUpDisplay()
 {
-    // Ẩn tất cả trước
     hideAllPlayerPowerUps();
 
     if (!playerPowerUpActive) return;
 
-    // FORCE SHOW với enhanced refresh
     switch (playerPowerUpType) {
-        case 1: // Double Damage
+        case 1:
             x2dame_1.setVisible(true);
             x2dame_1.invalidate();
             break;
 
-        case 2: // Heal - FORCE SHOW
+        case 2:
             healthplus_1.setVisible(true);
             healthplus_1.setAlpha(255);
             healthplus_1.setPosition(9, 61, 32, 37);
             healthplus_1.invalidate();
-            // Force double refresh
             healthplus_1.setVisible(false);
             healthplus_1.setVisible(true);
             healthplus_1.invalidate();
             break;
 
-        case 3: // Chakra - FORCE SHOW
+        case 3:
             chakragain_1.setVisible(true);
             chakragain_1.setAlpha(255);
             chakragain_1.setPosition(9, 61, 32, 37);
             chakragain_1.invalidate();
-            // Force double refresh
             chakragain_1.setVisible(false);
             chakragain_1.setVisible(true);
             chakragain_1.invalidate();
             break;
 
-        case 4: // Shield
+        case 4:
             sheild_1.setVisible(true);
             sheild_1.setAlpha(255);
             sheild_1.setPosition(8, 59, 32, 37);
@@ -665,13 +594,12 @@ void NarutoGameScreen2View::updatePlayerPowerUpDisplay()
             break;
     }
 
-    // Force screen refresh
     invalidate();
 }
 
-void NarutoGameScreen2View::updateAIPowerUpDisplay(){
+void NarutoGameScreen2View::updateAIPowerUpDisplay()
+{
 }
-
 
 void NarutoGameScreen2View::hideAllPlayerPowerUps()
 {
@@ -712,14 +640,10 @@ void NarutoGameScreen2View::clearPowerUpAfterUse(bool isPlayer)
     }
 }
 
-// ==================== UTILITY FUNCTIONS ====================
-
 int NarutoGameScreen2View::generateRandomNumber(int min, int max)
 {
-    // IMPROVED LINEAR CONGRUENTIAL GENERATOR
     randomSeed = (randomSeed * 1664525 + 1013904223) & 0x7fffffff;
 
-    // Additional mixing to improve distribution
     uint32_t mixed = randomSeed;
     mixed ^= mixed >> 16;
     mixed *= 0x85ebca6b;
@@ -730,34 +654,26 @@ int NarutoGameScreen2View::generateRandomNumber(int min, int max)
     return min + (mixed % (max - min + 1));
 }
 
-// Cập nhật calculateDamage function để hỗ trợ power-ups
 int NarutoGameScreen2View::calculateDamage(int baseDamage, bool isDefending, bool hasDoubleAttack, bool hasShield)
 {
-    // Shield blocks everything completely (chỉ có Shield mới block 100%)
     if (hasShield) {
-        return 0; // Shield chặn hoàn toàn
+        return 0;
     }
 
     int finalDamage = baseDamage;
 
-    // Apply double damage first
     if (hasDoubleAttack) {
-        finalDamage = (int)(baseDamage * 2.5); // x2.5 như yêu cầu
+        finalDamage = (int)(baseDamage * 2.5);
     }
 
-    // ===== SỬA: DEFEND CHỈ GIẢM 50% DAMAGE, KHÔNG BLOCK HOÀN TOÀN =====
     if (isDefending) {
-        // Defend giảm 50% damage cho tất cả các loại tấn công
         finalDamage = finalDamage / 2;
 
-        // Đảm bảo tối thiểu 1 damage (không thể defend xuống 0)
         if (finalDamage < 1) finalDamage = 1;
     }
 
     return finalDamage;
 }
-
-// ==================== PLAYER COMBAT FUNCTIONS ====================
 
 void NarutoGameScreen2View::playerAttack()
 {
@@ -767,26 +683,21 @@ void NarutoGameScreen2View::playerAttack()
     naruto_atk.invalidate();
     naruto.invalidate();
 
-    // Player damage calculation (unchanged)
     int baseDamage = generateRandomNumber(3, 8);
     bool hasDoubleAttack = (playerPowerUpActive && playerPowerUpType == 1);
-    int actualDamage = calculateDamage(baseDamage, aiDefending, hasDoubleAttack, false); // Boss không có shield
+    int actualDamage = calculateDamage(baseDamage, aiDefending, hasDoubleAttack, false);
 
-    // Apply damage to boss
     bossCurrentHP -= actualDamage;
     if (bossCurrentHP < 0) bossCurrentHP = 0;
 
-    // Gain chakra
     playerChakraLevel += generateRandomNumber(5, 10);
     if (playerChakraLevel > 100) playerChakraLevel = 100;
 
-    // Clear power-ups
     if (hasDoubleAttack) {
         clearPowerUpAfterUse(true);
     }
 
-    // Update UI
-    updateBossHPDisplay(); // Sử dụng hàm boss mới
+    updateBossHPDisplay();
     updatePlayerChakraDisplay();
     toggleLED();
 
@@ -808,24 +719,19 @@ void NarutoGameScreen2View::playerDefend()
     naruto_def.invalidate();
     naruto.invalidate();
 
-    // Set defend state
     playerDefending = true;
 
-    // ENHANCED healing khi đấu boss
-    int healAmount = generateRandomNumber(3, 7); // TĂNG TỪ 2-5 LÊN 3-7
+    int healAmount = generateRandomNumber(3, 7);
     playerHP += healAmount;
     if (playerHP > 100) playerHP = 100;
 
-    // ENHANCED chakra gain
-    playerChakraLevel += generateRandomNumber(10, 18); // TĂNG TỪ 8-15 LÊN 10-18
+    playerChakraLevel += generateRandomNumber(10, 18);
     if (playerChakraLevel > 100) playerChakraLevel = 100;
 
-    // Clear double damage if defending
     if (playerPowerUpActive && playerPowerUpType == 1) {
         clearPowerUpAfterUse(true);
     }
 
-    // Update UI
     updatePlayerHPDisplay();
     updatePlayerChakraDisplay();
     toggleLED();
@@ -846,38 +752,30 @@ void NarutoGameScreen2View::playerSpecial()
     naruto_spe.invalidate();
     naruto.invalidate();
 
-    // ===== SỬA: NARUTO SPECIAL GÂY DAMAGE 40 GIỐNG GAMESCREEN =====
-    int baseDamage = 40; // Damage cố định như trong GameScreenView
+    int baseDamage = 40;
 
-    // Không sử dụng power-up double damage cho special
-    bool bossHasShield = false; // Boss không có shield trong boss fight
+    bool bossHasShield = false;
 
-    // Tính damage với logic special
     int actualDamage = calculateSpecialDamage(baseDamage, aiDefending, bossHasShield);
 
-    // Apply damage to boss
     bossCurrentHP -= actualDamage;
     if (bossCurrentHP < 0) bossCurrentHP = 0;
 
-    // Reset chakra về 0 (tiêu tốn chakra như special skill bình thường)
     playerChakraLevel = 0;
 
-    // Update UI
     updateBossHPDisplay();
     updatePlayerChakraDisplay();
 
-    // LED effect cho special attack damage
     for (int i = 0; i < 6; i++) {
-        toggleLED(); // 6 LED blinks để báo hiệu special damage
+        toggleLED();
     }
 
     playerActionDone = true;
-    playerSpecialUsed = true; // Đánh dấu đã dùng special (không có power-up generation)
+    playerSpecialUsed = true;
 
-    // Check if boss is defeated
     if (bossCurrentHP <= 0) {
         if (!gameEnded) {
-            endGame(true); // Player thắng
+            endGame(true);
         }
     }
 
@@ -885,12 +783,9 @@ void NarutoGameScreen2View::playerSpecial()
     startResetTimer();
 }
 
-// ==================== AI COMBAT FUNCTIONS ====================
-
 void NarutoGameScreen2View::performAIAction()
 {
-    // KIỂM TRA QUAN TRỌNG: Nếu game đã kết thúc hoặc AI đã chết thì KHÔNG làm gì
-	if (gameEnded || bossCurrentHP <= 0) {
+    if (gameEnded || bossCurrentHP <= 0) {
         return;
     }
 
@@ -898,78 +793,66 @@ void NarutoGameScreen2View::performAIAction()
         return;
     }
 
-    int action = 1; // Default: attack
+    int action = 1;
 
-    // POWER-UP STRATEGY - SỬA LOGIC
     if (aiPowerUpActive) {
         switch(aiPowerUpType) {
-            case 1: // Double Damage Power-Up - ƯU TIÊN ATTACK THAY VÌ SPECIAL
+            case 1:
                 if (aiChakraLevel >= 100) {
                     int roll = generateRandomNumber(1, 100);
                     if (roll <= 80) {
-                        action = 1; // 80% Attack để tận dụng double damage
+                        action = 1;
                     } else if (roll <= 90) {
-                        action = 3; // 10% Special
+                        action = 3;
                     } else {
-                        action = 2; // 10% Defend
+                        action = 2;
                     }
                 } else {
-                    // Không đủ chakra cho special: 90% attack, 10% defend
                     if (generateRandomNumber(1, 100) <= 90) {
-                        action = 1; // Attack
+                        action = 1;
                     } else {
-                        action = 2; // Defend
+                        action = 2;
                     }
                 }
                 break;
 
-            case 4: // Shield Power-Up - VẪN AGGRESSIVE
+            case 4:
                 if (aiChakraLevel >= 100) {
-                    // 50% special, 50% attack khi có shield
                     if (generateRandomNumber(1, 100) <= 50) {
-                        action = 3; // Special
+                        action = 3;
                     } else {
-                        action = 1; // Attack
+                        action = 1;
                     }
                 } else {
-                    // Không đủ chakra: 100% attack
-                    action = 1; // Attack
+                    action = 1;
                 }
                 break;
 
-            case 2: // Heal Power-Up (đã dùng ngay)
-            case 3: // Chakra Power-Up (đã dùng ngay)
+            case 2:
+            case 3:
             default:
-                // Dùng AI logic bình thường
                 break;
         }
     }
 
-    // NẾU KHÔNG CÓ POWER-UP ĐẶC BIỆT, DÙNG AI LOGIC VỚI PLAYER CHAKRA AWARENESS
     if (!aiPowerUpActive || (aiPowerUpType != 1 && aiPowerUpType != 4)) {
-        // Tính phần trăm máu để đưa ra quyết định thông minh
-    	int aiHPPercent = (bossCurrentHP * 100) / bossMaxHP;
+        int aiHPPercent = (bossCurrentHP * 100) / bossMaxHP;
         int playerHPPercent = (playerHP * 100) / 100;
 
-        // CRITICAL: Check if player has 100 chakra (can use special)
         bool playerCanSpecial = (playerChakraLevel >= 100);
 
-        // BASE DEFEND CHANCE increase when player can special
         int baseDefendBonus = 0;
         if (playerCanSpecial) {
-            baseDefendBonus = 25; // +25% defend chance khi player có thể dùng special
+            baseDefendBonus = 25;
         }
 
-        // AI Decision making dựa trên personality, tình huống và lượng máu
         switch(aiPersonality)
         {
-            case 0: // Aggressive AI (70%) - Nhưng thông minh hơn
+            case 0:
                 if (aiChakraLevel >= 100) {
-                    // Khi có special: điều chỉnh theo player chakra
                     int specialChance = 60;
-                    int defendChance = 40 + baseDefendBonus; // Tăng defend khi player có special
+                    int defendChance = 40 + baseDefendBonus;
 
-                    // Điều chỉnh tỷ lệ dựa trên máu
                     if (aiHPPercent >= 80) {
                         defendChance = 50 + baseDefendBonus;
                         specialChance = 50 - (baseDefendBonus / 2);
@@ -989,47 +872,45 @@ void NarutoGameScreen2View::performAIAction()
                         defendChance -= 10;
                     }
 
-                    // Ensure percentages don't exceed 100
                     if (defendChance > 70) defendChance = 70;
                     if (specialChance < 30) specialChance = 30;
 
                     int roll = generateRandomNumber(1, 100);
                     if (roll <= defendChance) {
-                        action = 2; // Defend
+                        action = 2;
                     } else {
-                        action = 3; // Special
+                        action = 3;
                     }
                 } else {
-                    // Không có special: Quyết định giữa attack và defend
                     if (aiHPPercent >= 70) {
                         int defendChance = 30 + baseDefendBonus;
                         if (defendChance > 70) defendChance = 70;
                         if (generateRandomNumber(1, 100) <= defendChance) {
-                            action = 2; // Defend
+                            action = 2;
                         } else {
-                            action = 1; // Attack
+                            action = 1;
                         }
                     } else if (aiHPPercent >= 40) {
                         int defendChance = 50 + baseDefendBonus;
                         if (defendChance > 80) defendChance = 80;
                         if (generateRandomNumber(1, 100) <= defendChance) {
-                            action = 2; // Defend
+                            action = 2;
                         } else {
-                            action = 1; // Attack
+                            action = 1;
                         }
                     } else {
                         int defendChance = 30 + baseDefendBonus;
                         if (defendChance > 60) defendChance = 60;
                         if (generateRandomNumber(1, 100) <= defendChance) {
-                            action = 2; // Defend
+                            action = 2;
                         } else {
-                            action = 1; // Attack
+                            action = 1;
                         }
                     }
                 }
                 break;
 
-            case 1: // Defensive AI (20%) - Rất thận trọng + extra defensive với player special
+            case 1:
                 if (aiChakraLevel >= 100) {
                     int defendChance = 60 + baseDefendBonus;
                     int specialChance = 40 - (baseDefendBonus / 2);
@@ -1053,66 +934,64 @@ void NarutoGameScreen2View::performAIAction()
                         defendChance -= 5;
                     }
 
-                    // Ensure percentages are reasonable
                     if (defendChance > 85) defendChance = 85;
                     if (specialChance < 15) specialChance = 15;
 
                     int roll = generateRandomNumber(1, 100);
                     if (roll <= defendChance) {
-                        action = 2; // Defend
+                        action = 2;
                     } else {
-                        action = 3; // Special
+                        action = 3;
                     }
                 } else {
                     if (aiHPPercent >= 60) {
                         int defendChance = 80 + baseDefendBonus;
                         if (defendChance > 95) defendChance = 95;
                         if (generateRandomNumber(1, 100) <= defendChance) {
-                            action = 2; // Defend
+                            action = 2;
                         } else {
-                            action = 1; // Attack
+                            action = 1;
                         }
                     } else if (aiHPPercent >= 30) {
                         int defendChance = 65 + baseDefendBonus;
                         if (defendChance > 90) defendChance = 90;
                         if (generateRandomNumber(1, 100) <= defendChance) {
-                            action = 2; // Defend
+                            action = 2;
                         } else {
-                            action = 1; // Attack
+                            action = 1;
                         }
                     } else {
                         int defendChance = 40 + baseDefendBonus;
                         if (defendChance > 70) defendChance = 70;
                         if (generateRandomNumber(1, 100) <= defendChance) {
-                            action = 2; // Defend
+                            action = 2;
                         } else {
-                            action = 1; // Attack
+                            action = 1;
                         }
                     }
                 }
                 break;
 
-            case 2: // Random AI (10%) - Vẫn có một chút logic về player special
+            case 2:
                 if (aiChakraLevel >= 100) {
-                    int defendChance = 45 + (baseDefendBonus / 2); // Ít sensitive hơn với player special
+                    int defendChance = 45 + (baseDefendBonus / 2);
                     int roll = generateRandomNumber(1, 100);
                     if (roll <= defendChance) {
-                        action = 2; // Defend
+                        action = 2;
                     } else {
-                        action = 3; // Special
+                        action = 3;
                     }
                 } else {
                     if (aiHPPercent >= 70) {
                         int defendChance = 60 + (baseDefendBonus / 2);
                         if (generateRandomNumber(1, 100) <= defendChance) {
-                            action = 2; // Defend
+                            action = 2;
                         } else {
-                            action = 1; // Attack
+                            action = 1;
                         }
                     } else {
-                        // Mostly random but slight defend bias if player can special
                         if (playerCanSpecial && generateRandomNumber(1, 100) <= 30) {
-                            action = 2; // Defend
+                            action = 2;
                         } else {
                             action = generateRandomNumber(1, 2);
                         }
@@ -1120,73 +999,62 @@ void NarutoGameScreen2View::performAIAction()
                 }
                 break;
 
-            case 3: // Boss Adaptive Mode - MỚI THÊM
-                   if (aiChakraLevel >= 100) {
-                       // Boss có chakra đầy: ưu tiên special hoặc defend tùy tình huống
-                       int bossHPPercent = (bossCurrentHP * 100) / bossMaxHP;
-                       bool playerCanSpecial = (playerChakraLevel >= 100);
+            case 3:
+                if (aiChakraLevel >= 100) {
+                    int bossHPPercent = (bossCurrentHP * 100) / bossMaxHP;
+                    bool playerCanSpecial = (playerChakraLevel >= 100);
 
-                       if (bossHPPercent <= 30) {
-                           // Boss HP thấp: 70% special, 30% defend
-                           if (generateRandomNumber(1, 100) <= 70) {
-                               action = 3; // Special
-                           } else {
-                               action = 2; // Defend
-                           }
-                       } else if (playerCanSpecial) {
-                           // Player có thể special: 40% defend, 60% special
-                           if (generateRandomNumber(1, 100) <= 40) {
-                               action = 2; // Defend
-                           } else {
-                               action = 3; // Special
-                           }
-                       } else {
-                           // Tình huống bình thường: 50% special, 50% attack
-                           if (generateRandomNumber(1, 100) <= 50) {
-                               action = 3; // Special
-                           } else {
-                               action = 1; // Attack
-                           }
-                       }
-                   } else {
-                       // Boss không có chakra: chọn giữa attack và defend
-                       int bossHPPercent = (bossCurrentHP * 100) / bossMaxHP;
-                       bool playerCanSpecial = (playerChakraLevel >= 100);
+                    if (bossHPPercent <= 30) {
+                        if (generateRandomNumber(1, 100) <= 70) {
+                            action = 3;
+                        } else {
+                            action = 2;
+                        }
+                    } else if (playerCanSpecial) {
+                        if (generateRandomNumber(1, 100) <= 40) {
+                            action = 2;
+                        } else {
+                            action = 3;
+                        }
+                    } else {
+                        if (generateRandomNumber(1, 100) <= 50) {
+                            action = 3;
+                        } else {
+                            action = 1;
+                        }
+                    }
+                } else {
+                    int bossHPPercent = (bossCurrentHP * 100) / bossMaxHP;
+                    bool playerCanSpecial = (playerChakraLevel >= 100);
 
-                       if (bossHPPercent <= 50) {
-                           // Boss HP thấp: ưu tiên defend để hồi máu
-                           if (generateRandomNumber(1, 100) <= 70) {
-                               action = 2; // Defend
-                           } else {
-                               action = 1; // Attack
-                           }
-                       } else if (playerCanSpecial) {
-                           // Player có thể special: tăng defend
-                           if (generateRandomNumber(1, 100) <= 60) {
-                               action = 2; // Defend
-                           } else {
-                               action = 1; // Attack
-                           }
-                       } else {
-                           // Tình huống bình thường: 60% attack, 40% defend
-                           if (generateRandomNumber(1, 100) <= 60) {
-                               action = 1; // Attack
-                           } else {
-                               action = 2; // Defend
-                           }
-                       }
-                   }
-                   break;
+                    if (bossHPPercent <= 50) {
+                        if (generateRandomNumber(1, 100) <= 70) {
+                            action = 2;
+                        } else {
+                            action = 1;
+                        }
+                    } else if (playerCanSpecial) {
+                        if (generateRandomNumber(1, 100) <= 60) {
+                            action = 2;
+                        } else {
+                            action = 1;
+                        }
+                    } else {
+                        if (generateRandomNumber(1, 100) <= 60) {
+                            action = 1;
+                        } else {
+                            action = 2;
+                        }
+                    }
+                }
+                break;
 
-               default:
-                   // Fallback: dùng logic aggressive
-                   action = 1; // Attack
-                   break;
-           }
+            default:
+                action = 1;
+                break;
         }
+    }
 
-
-    // Thực hiện hành động - VỚI KIỂM TRA AN TOÀN
     switch(action)
     {
         case 1:
@@ -1212,19 +1080,18 @@ void NarutoGameScreen2View::aiAttack()
     bleach_atk.invalidate();
     bleach.invalidate();
 
-    // ===== BOSS DAMAGE CALCULATION =====
     int baseDamage;
     switch(bossPhase) {
-        case 1: // Phase 1 (130-81): 4-10 damage
+        case 1:
             baseDamage = generateRandomNumber(4, 10);
             break;
-        case 2: // Phase 2 (80-51): 6-12 damage
+        case 2:
             baseDamage = generateRandomNumber(6, 12);
             break;
-        case 3: // Phase 3 (50-21) + Rage: 8-15 damage
+        case 3:
             baseDamage = generateRandomNumber(8, 15);
             break;
-        case 4: // Phase 4 (20-1) + Rage Max: 10-18 damage
+        case 4:
             baseDamage = generateRandomNumber(10, 18);
             break;
         default:
@@ -1232,29 +1099,23 @@ void NarutoGameScreen2View::aiAttack()
             break;
     }
 
-    // Boss không có power-up, chỉ check player shield
     bool playerHasShield = (playerPowerUpActive && playerPowerUpType == 4);
     int actualDamage = calculateDamage(baseDamage, playerDefending, false, playerHasShield);
 
-    // Apply damage to player
     playerHP -= actualDamage;
     if (playerHP < 0) playerHP = 0;
 
-    // ===== SỬA: BOSS GAIN CHAKRA CHẬM HỚN =====
-    int chakraGain = generateRandomNumber(4, 8); // GIẢM TỪ 8-15 XUỐNG 4-8
+    int chakraGain = generateRandomNumber(4, 8);
     aiChakraLevel += chakraGain;
     if (aiChakraLevel > 100) aiChakraLevel = 100;
 
-    // Clear player shield if it blocked damage
     if (playerHasShield && actualDamage == 0) {
         clearPowerUpAfterUse(true);
     }
 
-    // Update UI
     updatePlayerHPDisplay();
     updateAIChakraDisplay();
 
-    // Start fire animation instead of ending immediately
     startAttackFireAnimation();
     startResetTimer();
 }
@@ -1270,22 +1131,20 @@ void NarutoGameScreen2View::aiDefend()
     bleach_def.invalidate();
     bleach.invalidate();
 
-    // Set defend state
     aiDefending = true;
 
-    // Boss heal amount based on phase
     int healAmount;
     switch(bossPhase) {
-        case 1: // Phase 1 (130-81): 2-5 heal
+        case 1:
             healAmount = generateRandomNumber(2, 5);
             break;
-        case 2: // Phase 2 (80-51): 3-6 heal
+        case 2:
             healAmount = generateRandomNumber(3, 6);
             break;
-        case 3: // Phase 3 (50-21) + Rage: 4-7 heal
+        case 3:
             healAmount = generateRandomNumber(4, 7);
             break;
-        case 4: // Phase 4 (20-1) + Rage Max: 5-8 heal
+        case 4:
             healAmount = generateRandomNumber(5, 8);
             break;
         default:
@@ -1296,11 +1155,9 @@ void NarutoGameScreen2View::aiDefend()
     bossCurrentHP += healAmount;
     if (bossCurrentHP > bossMaxHP) bossCurrentHP = bossMaxHP;
 
-    // ===== SỬA: BOSS GAIN CHAKRA CHẬM HỚN KHI DEFEND =====
-    aiChakraLevel += generateRandomNumber(8, 12); // GIẢM TỪ 12-20 XUỐNG 8-12
+    aiChakraLevel += generateRandomNumber(8, 12);
     if (aiChakraLevel > 100) aiChakraLevel = 100;
 
-    // Update UI
     updateBossHPDisplay();
     updateAIChakraDisplay();
 
@@ -1309,10 +1166,9 @@ void NarutoGameScreen2View::aiDefend()
 
 void NarutoGameScreen2View::aiSpecial()
 {
-    // Boss special requirements based on phase
     int requiredChakra = 100;
     if (rageMode && bossPhase >= 3) {
-        requiredChakra = 80; // Rage mode: chỉ cần 80 chakra
+        requiredChakra = 80;
     }
 
     if (aiChakraLevel < requiredChakra || gameEnded) {
@@ -1326,50 +1182,39 @@ void NarutoGameScreen2View::aiSpecial()
     bleach_spe.invalidate();
     bleach.invalidate();
 
-    // ===== SỬA: BOSS SPECIAL DAMAGE CỐ ĐỊNH 70 =====
-    int specialDamage = 70; // LUÔN LUÔN GÂY 70 DAMAGE
+    int specialDamage = 70;
 
     bool playerHasShield = (playerPowerUpActive && playerPowerUpType == 4);
     int actualDamage = calculateSpecialDamage(specialDamage, playerDefending, playerHasShield);
 
-    // Apply damage to player
     playerHP -= actualDamage;
     if (playerHP < 0) playerHP = 0;
 
-    // Reset chakra
     aiChakraLevel = 0;
 
-    // Clear player shield if it blocked damage
     if (playerHasShield && actualDamage == 0) {
         clearPowerUpAfterUse(true);
     }
 
-    // Update UI
     updateAIChakraDisplay();
     updatePlayerHPDisplay();
 
-    // Start special fire animation
     startSpecialFireAnimation();
     startResetTimer();
 }
 
-// ==================== CHARACTER STATE FUNCTIONS ====================
-
 void NarutoGameScreen2View::resetNarutoState()
 {
-    // Ẩn tất cả các trạng thái đặc biệt của naruto
     naruto_atk.setVisible(false);
     naruto_def.setVisible(false);
     naruto_spe.setVisible(false);
     naruto_lose.setVisible(false);
     naruto_win.setVisible(false);
 
-    // Hiển thị lại naruto bình thường (chỉ khi chưa thua và game chưa kết thúc)
     if (playerHP > 0 && !gameEnded) {
         naruto.setVisible(true);
     }
 
-    // Invalidate tất cả
     naruto_atk.invalidate();
     naruto_def.invalidate();
     naruto_spe.invalidate();
@@ -1380,19 +1225,16 @@ void NarutoGameScreen2View::resetNarutoState()
 
 void NarutoGameScreen2View::resetBleachState()
 {
-    // Ẩn tất cả các trạng thái đặc biệt của bleach
     bleach_atk.setVisible(false);
     bleach_def.setVisible(false);
     bleach_spe.setVisible(false);
     bleach_lose.setVisible(false);
     bleach_win.setVisible(false);
 
-    // SỬA: THAY aiHP THÀNH bossCurrentHP
     if (bossCurrentHP > 0 && !gameEnded) {
         bleach.setVisible(true);
     }
 
-    // Invalidate tất cả
     bleach_atk.invalidate();
     bleach_def.invalidate();
     bleach_spe.invalidate();
@@ -1407,39 +1249,29 @@ void NarutoGameScreen2View::startResetTimer()
     resetTimerActive = true;
 }
 
-// ==================== HP DISPLAY SYSTEM ====================
-
 void NarutoGameScreen2View::updatePlayerHPDisplay()
 {
-    // Ẩn tất cả HP widgets của player trước
     hideAllPlayerHPWidgets();
 
-    // Làm tròn xuống bội số 10
     int roundedHP = (playerHP / 10) * 10;
 
-    // Đảm bảo roundedHP trong phạm vi hợp lệ
     if (roundedHP < 0) roundedHP = 0;
     if (roundedHP > 100) roundedHP = 100;
 
-    // DEBUG: Force test khi Player HP = 0
     if (playerHP == 0 || roundedHP == 0) {
-        // FORCE HIỂN THỊ HP_0_ID
         BITMAP_HP_0_ID.setVisible(true);
         BITMAP_HP_0_ID.invalidate();
 
-        // DEBUG: LED blink nhiều lần
         for (int i = 0; i < 10; i++) {
             toggleLED();
         }
 
-        // FORCE END GAME
         if (!gameEnded) {
-            endGame(false); // Player thua
+            endGame(false);
         }
         return;
     }
 
-    // Hiển thị widget HP phù hợp cho player
     switch (roundedHP) {
         case 100:
             BITMAP_HP_100_ID.setVisible(true);
@@ -1482,11 +1314,10 @@ void NarutoGameScreen2View::updatePlayerHPDisplay()
             BITMAP_HP_10_ID.invalidate();
             break;
         default:
-            // Fallback case - cũng force về 0
             BITMAP_HP_0_ID.setVisible(true);
             BITMAP_HP_0_ID.invalidate();
             if (!gameEnded) {
-                endGame(false); // Player thua
+                endGame(false);
             }
             break;
     }
@@ -1494,7 +1325,6 @@ void NarutoGameScreen2View::updatePlayerHPDisplay()
 
 void NarutoGameScreen2View::hideAllPlayerHPWidgets()
 {
-    // Ẩn tất cả HP widgets của player
     BITMAP_HP_100_ID.setVisible(false);
     BITMAP_HP_90_ID.setVisible(false);
     BITMAP_HP_80_ID.setVisible(false);
@@ -1507,7 +1337,6 @@ void NarutoGameScreen2View::hideAllPlayerHPWidgets()
     BITMAP_HP_10_ID.setVisible(false);
     BITMAP_HP_0_ID.setVisible(false);
 
-    // Invalidate tất cả
     BITMAP_HP_100_ID.invalidate();
     BITMAP_HP_90_ID.invalidate();
     BITMAP_HP_80_ID.invalidate();
@@ -1523,83 +1352,63 @@ void NarutoGameScreen2View::hideAllPlayerHPWidgets()
 
 int NarutoGameScreen2View::calculateSpecialDamage(int baseDamage, bool isDefending, bool hasShield)
 {
-    // Shield blocks everything completely
     if (hasShield) {
-        return 0; // Shield chặn hoàn toàn
+        return 0;
     }
 
-    // ===== SỬA: SPECIAL DAMAGE CỐ ĐỊNH 70, CHỈ BỊ GIẢM KHI DEFEND =====
-    int finalDamage = baseDamage; // baseDamage = 70 cố định
+    int finalDamage = baseDamage;
 
-    // Defend giảm 50% damage (70 -> 35)
     if (isDefending) {
-        finalDamage = finalDamage / 2; // 70 / 2 = 35
+        finalDamage = finalDamage / 2;
 
-        // Đảm bảo tối thiểu 1 damage
         if (finalDamage < 1) finalDamage = 1;
     }
 
     return finalDamage;
 }
 
-// ==================== CHAKRA SYSTEM ====================
-
 void NarutoGameScreen2View::updatePlayerChakraDisplay()
 {
-    // Đảm bảo chakra level không bị âm
     if (playerChakraLevel < 0) playerChakraLevel = 0;
     if (playerChakraLevel > 100) playerChakraLevel = 100;
 
-    // Xử lý đặc biệt khi chakra = 0
     if (playerChakraLevel == 0) {
-        // Ẩn hoàn toàn chakra box
         chakra_box1.setVisible(false);
         chakra_box1.invalidate();
         return;
     }
 
-    // Hiển thị lại chakra box nếu có chakra
     chakra_box1.setVisible(true);
 
-    // Tính toán width dựa trên chakra level (0-100%)
-    int maxWidth = 86; // Width tối đa của thanh chakra player
+    int maxWidth = 86;
     int currentWidth = (playerChakraLevel * maxWidth) / 100;
 
-    // Đảm bảo width hợp lệ
-    if (currentWidth < 1) currentWidth = 1; // Tối thiểu 1 pixel nếu có chakra
+    if (currentWidth < 1) currentWidth = 1;
     if (currentWidth > maxWidth) currentWidth = maxWidth;
 
-    // Cập nhật kích thước Box chakra của player
     chakra_box1.setPosition(14, 43, currentWidth, 5);
     chakra_box1.invalidate();
 }
 
 void NarutoGameScreen2View::updateAIChakraDisplay()
 {
-    // Đảm bảo AI chakra level không bị âm
     if (aiChakraLevel < 0) aiChakraLevel = 0;
     if (aiChakraLevel > 100) aiChakraLevel = 100;
 
-    // Xử lý đặc biệt khi chakra = 0
     if (aiChakraLevel == 0) {
-        // Ẩn hoàn toàn chakra box
         chakra_box2.setVisible(false);
         chakra_box2.invalidate();
         return;
     }
 
-    // Hiển thị lại chakra box nếu có chakra
     chakra_box2.setVisible(true);
 
-    // Tính toán width dựa trên AI chakra level (0-100%)
-    int maxWidth = 86; // Width tối đa của thanh chakra AI
+    int maxWidth = 86;
     int currentWidth = (aiChakraLevel * maxWidth) / 100;
 
-    // Đảm bảo width hợp lệ
-    if (currentWidth < 1) currentWidth = 1; // Tối thiểu 1 pixel nếu có chakra
+    if (currentWidth < 1) currentWidth = 1;
     if (currentWidth > maxWidth) currentWidth = maxWidth;
 
-    // Cập nhật kích thước Box chakra của AI
     chakra_box2.setPosition(135, 43, currentWidth, 5);
     chakra_box2.invalidate();
 }
@@ -1626,12 +1435,8 @@ void NarutoGameScreen2View::useChakra(int amount)
     updatePlayerChakraDisplay();
 }
 
-// ==================== GAME END SYSTEM ====================
-
 void NarutoGameScreen2View::checkGameEnd()
 {
-    // BỎ FUNCTION NÀY VÌ GIỜ KIỂM TRA TRỰC TIẾP TRONG updateHPDisplay()
-    // Logic game end giờ được xử lý trong updatePlayerHPDisplay() và updateAIHPDisplay()
     return;
 }
 
@@ -1639,25 +1444,19 @@ void NarutoGameScreen2View::endGame(bool playerWon)
 {
     gameEnded = true;
 
-    // Hide menu actions immediately
     hideActionButtons();
     btn_arrow1.setVisible(false);
     btn_arrow1.invalidate();
 
-    // Hide all power-up icons when game ends
     hideAllPlayerPowerUps();
 
-    // FORCE STOP ALL ANIMATIONS
     fireAnimationActive = false;
     fireAnimationTimer = 0;
     resetTimerActive = false;
     resetTimer = 0;
 
-    // ===== FORCE HIDE ALL FIRE EFFECTS =====
     hideAllFireEffects();
 
-    // ===== FORCE HIDE ALL CHARACTER SPRITES =====
-    // Naruto sprites
     naruto.setVisible(false);
     naruto_atk.setVisible(false);
     naruto_def.setVisible(false);
@@ -1665,19 +1464,16 @@ void NarutoGameScreen2View::endGame(bool playerWon)
     naruto_lose.setVisible(false);
     naruto_win.setVisible(false);
 
-    // Bleach sprites - FORCE HIDE ALL INCLUDING bleach_spe
     bleach.setVisible(false);
     bleach_atk.setVisible(false);
     bleach_def.setVisible(false);
-    bleach_spe.setVisible(false);  // ĐẶC BIỆT ẨN CÁI NÀY
+    bleach_spe.setVisible(false);
     bleach_lose.setVisible(false);
     bleach_win.setVisible(false);
 
-    // Hide game over screens first
     gameover.setVisible(false);
     win.setVisible(false);
 
-    // ===== INVALIDATE ALL TO FORCE REFRESH =====
     naruto.invalidate();
     naruto_atk.invalidate();
     naruto_def.invalidate();
@@ -1688,32 +1484,27 @@ void NarutoGameScreen2View::endGame(bool playerWon)
     bleach.invalidate();
     bleach_atk.invalidate();
     bleach_def.invalidate();
-    bleach_spe.invalidate();  // QUAN TRỌNG
+    bleach_spe.invalidate();
     bleach_lose.invalidate();
     bleach_win.invalidate();
 
     if (playerWon) {
-        // LED signal for character unlock
         for (int i = 0; i < 8; i++) {
             toggleLED();
         }
 
-        // ===== CHỈ HIỂN THỊ CÁC SPRITE CẦN THIẾT =====
         naruto_win.setVisible(true);
-        bleach_lose.setVisible(true);  // CHỈ CON RỒNG NẰM
+        bleach_lose.setVisible(true);
         win.setVisible(true);
 
-        // FORCE REFRESH ONLY NEEDED SPRITES
         naruto_win.invalidate();
         bleach_lose.invalidate();
         win.invalidate();
 
-        // LED blink rapidly for victory
         for (int i = 0; i < 6; i++) {
             toggleLED();
         }
     } else {
-        // Player loses - Naruto dies
         naruto_lose.setVisible(true);
         bleach_win.setVisible(true);
         gameover.setVisible(true);
@@ -1722,56 +1513,43 @@ void NarutoGameScreen2View::endGame(bool playerWon)
         bleach_win.invalidate();
         gameover.invalidate();
 
-        // LED stays on for defeat
         HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_SET);
 
-        // ===== PLAYER THUA: GOTO BACKUPSCREEN NGAY LẬP TỨC =====
-        // Tắt LED trước khi chuyển screen
         HAL_GPIO_WritePin(GPIOG, GPIO_PIN_13, GPIO_PIN_RESET);
 
-        // Chuyển về BackUpScreen ngay lập tức
         application().gotoBackUpScreenScreenNoTransition();
         return;
     }
 
-    // ===== CHỈ KHI PLAYER THẮNG MỚI CÓ AUTO RETURN TIMER =====
     autoReturnTimer = 0;
     autoReturnTimerActive = true;
 
-    // Debug: LED signal that timer has started (chỉ khi player thắng)
     toggleLED();
     toggleLED();
     toggleLED();
 
-    // Ensure gameEnded = true is set
     gameEnded = true;
 }
 
 void NarutoGameScreen2View::activateEasterEgg()
 {
-    // Set flag
     easterEggActivated = true;
     easterEggTimer = 0;
-    gameEnded = true; // Kết thúc game ngay lập tức
+    gameEnded = true;
 
-    // FORCE STOP ALL ANIMATIONS
     fireAnimationActive = false;
     fireAnimationTimer = 0;
     resetTimerActive = false;
     resetTimer = 0;
 
-    // ===== FORCE HIDE ALL FIRE EFFECTS =====
     hideAllFireEffects();
 
-    // Hide menu actions immediately
     hideActionButtons();
     btn_arrow1.setVisible(false);
     btn_arrow1.invalidate();
 
-    // Hide all power-up icons
     hideAllPlayerPowerUps();
 
-    // ===== FORCE HIDE ALL CHARACTER SPRITES =====
     naruto.setVisible(false);
     naruto_atk.setVisible(false);
     naruto_def.setVisible(false);
@@ -1782,15 +1560,13 @@ void NarutoGameScreen2View::activateEasterEgg()
     bleach.setVisible(false);
     bleach_atk.setVisible(false);
     bleach_def.setVisible(false);
-    bleach_spe.setVisible(false);  // QUAN TRỌNG: ẨN CÁI NÀY
+    bleach_spe.setVisible(false);
     bleach_lose.setVisible(false);
     bleach_win.setVisible(false);
 
-    // Hide game over screens first
     gameover.setVisible(false);
     win.setVisible(false);
 
-    // ===== INVALIDATE ALL =====
     naruto.invalidate();
     naruto_atk.invalidate();
     naruto_def.invalidate();
@@ -1801,25 +1577,22 @@ void NarutoGameScreen2View::activateEasterEgg()
     bleach.invalidate();
     bleach_atk.invalidate();
     bleach_def.invalidate();
-    bleach_spe.invalidate();  // QUAN TRỌNG
+    bleach_spe.invalidate();
     bleach_lose.invalidate();
     bleach_win.invalidate();
 
-    // ===== CHỈ HIỂN THỊ SPRITE CẦN THIẾT =====
     naruto_win.setVisible(true);
-    bleach_lose.setVisible(true);  // CHỈ CON RỒNG NẰM
+    bleach_lose.setVisible(true);
     win.setVisible(true);
 
     naruto_win.invalidate();
     bleach_lose.invalidate();
     win.invalidate();
 
-    // ===== EASTER EGG LED PATTERN =====
     for (int i = 0; i < 15; i++) {
-        toggleLED(); // 15 LED blinks để báo hiệu Easter Egg
+        toggleLED();
     }
 
-    // Debug: LED signal that Easter Egg activated
     toggleLED();
     toggleLED();
     toggleLED();
@@ -1827,34 +1600,26 @@ void NarutoGameScreen2View::activateEasterEgg()
 
 void NarutoGameScreen2View::updateBossHPDisplay()
 {
-    // Hide all boss HP widgets first
     hideAllBossHPWidgets();
 
-    // ===== HỆ THỐNG HP ĐỐN GIẢN - GIỐNG GAMESCREEN NHƯNG BẮT ĐẦU TỪ 130 =====
-    // Làm tròn xuống bội số 10 (giống GameScreenView)
     int roundedHP = (bossCurrentHP / 10) * 10;
     if (roundedHP < 0) roundedHP = 0;
     if (roundedHP > 130) roundedHP = 130;
 
-    // DEBUG: Force test khi Boss HP = 0
     if (bossCurrentHP == 0 || roundedHP == 0) {
-        // FORCE HIỂN THỊ HP_0_ID_1
         BITMAP_HP_0_ID_1.setVisible(true);
         BITMAP_HP_0_ID_1.invalidate();
 
-        // DEBUG: LED blink nhiều lần
         for (int i = 0; i < 10; i++) {
             toggleLED();
         }
 
-        // FORCE END GAME
         if (!gameEnded) {
-            endGame(true); // Player thắng
+            endGame(true);
         }
         return;
     }
 
-    // Hiển thị widget HP phù hợp cho boss
     switch (roundedHP) {
         case 130:
             BITMAP_HP_130_ID_1.setVisible(true);
@@ -1909,13 +1674,11 @@ void NarutoGameScreen2View::updateBossHPDisplay()
             BITMAP_HP_10_ID_1.invalidate();
             break;
         default:
-            // Fallback case - cũng force về 0
             BITMAP_HP_0_ID_1.setVisible(true);
             BITMAP_HP_0_ID_1.invalidate();
             if (!gameEnded) {
-                endGame(true); // Player thắng
+                endGame(true);
             }
             break;
     }
 }
-
